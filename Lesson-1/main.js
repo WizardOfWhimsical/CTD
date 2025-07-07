@@ -133,7 +133,7 @@ console.log(weirdInitials)
 
 // PUT YOUR CODE HERE
 let answer7 = null;
-const control = 10;
+let control = 10;
 if (integer < control) {
     answer7 = "less than"
 } else if (integer > control) {
@@ -151,6 +151,11 @@ console.log(answer7)
 //STRETCH GOAL: Combine your skills!  Use template literals to console.log your name in the phrase as in "Sally, age is just a number!" or "Jose, you're young at heart!"
 
 // PUT YOUR CODE HERE
+const age = 39;
+control = 30;
+
+//i love ternarys, you didnt specify the conditional
+age < control ? console.log(`${firstName}, age is nothing but a number`) : console.log(`${lastName} is young at heart`);
 
 // Don't forget your console.logs!
 
@@ -163,6 +168,21 @@ console.log(answer7)
 // STRETCH GOAL: Complete Q9 using a switch statement instead of if elseif else.
 
 // PUT YOUR CODE HERE
+// https://devdocs.io/javascript/global_objects/math/random
+// and yes technically, dude noah, i woulda made functions of all these
+//  operations, but thats not what you asked for.
+const randomNum = Math.floor(Math.random() * (1 - 3) + 1);
+switch (randomNum) {
+    case 1:
+        console.log("it is certain");
+        break;
+    case 2:
+        console.log("Perhaps.");
+        break;
+    case 3:
+        console.log("Absolutely not.")
+        break;
+}
 
 // Don't forget your console.logs!
 
