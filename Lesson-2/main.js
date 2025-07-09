@@ -27,6 +27,28 @@
 //    Hello World!
 
 // PUT YOUR CODE HERE
+/*
+just figured something funny out. the arrow function (i assume
+because it is being declared with "let"), wouldnt let me call it
+ReferenceError: Cannot access 'repeat' before initialization 
+funny little things we learn
+
+I choose to do the "while" loop because i havent had alot of practice
+using them. thought this would be a good time
+
+note: i forgot the second hypen for incrementationad didnt relize it.
+        wasted 20 minutes
+*/
+
+let repeat = (n) => {
+    while (n>0) {
+        console.log("Hi Mom")
+        n--
+    } 
+}
+
+repeat(3)
+// console.log("hello")
 
 // ---------- QUESTION 2 ----------
 // Write a function called 'pyramidCounting' that takes 1 integer parameter and returns the sum of all of the numbers between 0 and the parameter.
@@ -39,6 +61,16 @@
 
 //PUT YOUR CODE HERE
 
+// let n = 5;
+function pyramidCountin(n) {
+    let buildNum = 0;
+    while (n >= 0) {
+        buildNum = buildNum + n;
+        n--
+}
+console.log(buildNum)
+}
+pyramidCountin(6)
 // ---------- QUESTION 3 ----------
 // Write a function called 'noVowels' that take a string parameter and removes vowels from that string using a loop.
 
@@ -174,3 +206,6 @@
 //    BONUS: [1,2,'fizz',4,'buzz','fizz',7,8,'fizz','buzz',11,'fizz',13,14,'fizzbuzz']
 
 // PUT YOUR CODE HERE
+
+// FIZZBUZZ!!  
+// i first did this as an exercise in eloquent javascript
