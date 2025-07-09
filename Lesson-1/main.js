@@ -50,9 +50,9 @@ console.log(
 console.log("Q2: This is a whole number, also called an integer: ", integer);
 console.log("Q2: This is a negative number: ", negative);
 console.log("Q2: You can't multiply 4 by a word! ", notANumber);
-console.log(bigNumber[0], bigNumber[1], bigNumber[2])
-console.log(bigNumber[3], bigNumber[4], bigNumber[5])
-console.log(bigNumber[6], bigNumber[7], bigNumber[8])
+console.log("Q2: ",bigNumber[0], bigNumber[1], bigNumber[2])
+console.log("Q2: ",bigNumber[3], bigNumber[4], bigNumber[5])
+console.log("Q2: ",bigNumber[6], bigNumber[7], bigNumber[8])
 
 // ---------- Question 3 ----------
 // Declaring and giving boolean values to variables.
@@ -62,7 +62,7 @@ console.log(bigNumber[6], bigNumber[7], bigNumber[8])
 const honest = true, liar = false;
 console.log("The variable I made true is honest: ", honest);
 //The output of the above should be true.
-console.log("The variable I made false is liar: ", liar);
+console.log("Q3: The variable I made false is liar: ", liar);
 //The output of the above should be false. ;P
 
 // ---------- QUESTION 4 ----------
@@ -77,7 +77,7 @@ console.log("The variable I made false is liar: ", liar);
 
 // const firstName = "Stephen", lastName = "Lewis", country = "Michigan, America";
 const bio = `${firstName} ${lastName} lives in ${country}`
-console.log(bio)
+console.log("Q4: ",bio)
 // Don't forget your console.logs!
 
 // ---------- QUESTION 5 ----------
@@ -89,8 +89,8 @@ console.log(bio)
 
 const comboOne = floatingPoint + integer, comboTwo = integer + negative;
 
-console.log(comboOne)
-console.log(comboTwo)
+console.log("Q5: ",comboOne)
+console.log("Q5: ",comboTwo)
 
 // Don't forget your console.logs!
 
@@ -118,11 +118,11 @@ const lastLength = lastName.length;
 const lastNameLastInitial = lastName[lastLength-1]
 const weirdInitials = `${lastInitial.toUpperCase()}${lastNameLastInitial.toUpperCase()}`
 //console log operations
-console.log(length)
-console.log(firstInitial)
-console.log(lastInitial)
-console.log(capitalize)
-console.log(weirdInitials)
+console.log("Q6: ",length)
+console.log("Q6: ",firstInitial)
+console.log("Q6: ",lastInitial)
+console.log("Q6: ",capitalize)
+console.log("Q6: ",weirdInitials)
 
 // Don't forget your console.logs!
 
@@ -140,7 +140,7 @@ if (integer < control) {
     answer7 = "greater than"
 } else { answer7 = "equal to" }
 //dont know why i always mix my signs, i do it in loops too smh
-console.log(answer7)
+console.log("Q7: ",answer7)
 
 
 // Don't forget your console.logs!
@@ -155,7 +155,7 @@ const age = 39;
 control = 30;
 
 //i love ternarys, you didnt specify the conditional
-age < control ? console.log(`${firstName}, age is nothing but a number`) : console.log(`${lastName} is young at heart`);
+age < control ? console.log("Q8:",`${firstName}, age is nothing but a number`) : console.log("Q8:",`${lastName} is young at heart`);
 
 // Don't forget your console.logs!
 
@@ -174,13 +174,13 @@ age < control ? console.log(`${firstName}, age is nothing but a number`) : conso
 const randomNum = Math.floor(Math.random() * (1 - 3) + 1);
 switch (randomNum) {
     case 1:
-        console.log("it is certain");
+        console.log("Q9: it is certain");
         break;
     case 2:
-        console.log("Perhaps.");
+        console.log("Q9: Perhaps.");
         break;
     case 3:
-        console.log("Absolutely not.")
+        console.log("Q9: Absolutely not.")
         break;
 }
 
@@ -193,13 +193,37 @@ switch (randomNum) {
 
 // PUT YOUR CODE HERE
 
+//so the idea is to round the float 2nd num based off the 3rd float??
+//"...a series of calc...", this is it what is it...
+//how can i rounnd with no floatingRounding operations, there for whole numbers?
+//how do i remove the numbers after the decimail??
+//Awwhha shit ;-}, you move the decimal not the numbers
+
+/*
+i want to point out this one was my main pain so far but so fun.
+the above is what i typed as i was trying to figure it out. i stared
+at those four lines for about 30 minutes, reading. then my brain 
+its regular math. i dont know if this was what you wanted but i thought
+it...manipulation lol
+*/
+
+let exampleNum = 21.4572;
+exampleNum = exampleNum * 100;
+let newNum = Math.round(exampleNum);
+exampleNum = newNum / 100;
+
+console.log("Q10: ",exampleNum)
+
 // Don't forget your console.logs!
 
 // ---------- QUESTION 11 ----------
 // Declare two variables named "stringNum" and "mathNum".  Assign stringNum a STRING of numbers and mathNUM numbers.  Create a third variable named "answer11" and have it multiply stringNum and mathNum.  Remember to convert your string in order for it to properly calculate!
 
 // PUT YOUR CODE HERE
-
+//parse
+const stringNum = "220", mathNum = 200;
+let answer11 = parseInt(stringNum) + mathNum
+console.log("Q11: ", answer11)
 // Don't forget your console.logs!
 
 // ---------- QUESTION 12 ----------
@@ -212,6 +236,14 @@ switch (randomNum) {
 
 //PUT YOUR CODE HERE
 
+// i actually just got savey with arrow function calls. Had to
+let messageString = () => {
+    const message = `Welcome to Code The Dream ${firstName} ${lastName},`;
+    const customConcante = " We will have a lot of fun!"
+    return message + customConcante;
+}
+
+console.log("Q12: ", messageString())
 // ---------- QUESTION 13 ----------
 // Create a function called 'combineStrings'.  Inside the function, declare two variables named 'string1' and 'string2'.  Assign them the strings 'Good' and 'Evening' respecitvely.  Return the two strings concatenated with a space in between.
 
@@ -221,6 +253,18 @@ switch (randomNum) {
 //    Q13: Good Evening
 
 //PUT YOUR CODE HERE
+
+//swear to God i didnt knwo this was the next question 
+//when i was playing with the last function. 
+
+function combineString() {
+    let string1 = "Good "
+    let string2 = "Evening!"
+
+    return string1 + string2
+}
+
+console.log("Q13: ", combineString())
 
 // ---------- QUESTION 14 ----------
 // Let's start working with parameters.  Create a function called 'useParams' that takes one parameter and returns that parameter with the all letters capitalized.
@@ -232,6 +276,11 @@ switch (randomNum) {
 
 //PUT YOUR CODE HERE
 
+let useParams = (str) => {
+   return str.toUpperCase()
+}
+
+console.log("Q14: ",useParams("HelloWorld"))
 // ---------- QUESTION 15 ----------
 // Now let's work with strings... Create two variables named 'word1' and 'word2' and assign them any strings you want.  Then create a function called 'biggestStringLength' that takes word1 and word2 as parameters and returns the length of the longer string. If they are of equal length, just return that length.  Stretch your skills by making an empty string and seeing what happens in that situation.
 
@@ -241,3 +290,28 @@ switch (randomNum) {
 //    Q15: 5
 
 // PUT YOUR CODE HERE
+
+// the empty string comment makes me think yall want a fail safe in place
+// for error handling understanding, i will try lol
+
+let word1 = "Something stupid super long", word2 = "something Short"
+
+function biggestStringLength(one, two) {
+    // console.log(one.length)
+    one = one.trim()
+    two = two.trim()
+    if (one.length <= 1 && two.length <= 1) {
+        return "is this anythign to compare?"
+    }else{}
+    if (one.length > two.length) {
+        return one.length
+    } else if (two.length > one.length) {
+        return two.length
+    }else{return (one.length+two.length)/2}
+}
+
+let finalThought = "I hope i atleast gave you a laugh or twon walking through my process and sharing my thoughts."
+
+console.log("Q15: ", biggestStringLength(word1, word2));
+
+console.log(finalThought)
