@@ -16,6 +16,11 @@
 
 // Please be sure to check the output of your called functions and console logs in the Console on this screen. Check to make sure that the output you get in your Console is the expected output.
 
+/*
+!! I jsut want to state now, because we are doing loops here, i will be trying !! doWhile and while loops, if i dont it means i couldnt get the syntax correct
+!! or i was having a problem with scope
+*/
+
 // ---------- QUESTION 1 ----------
 // Write a function called 'repeat' that takes 1 integer parameter and, using a for or while loop, prints out the string "Hello World!" to the console the same number of times as the parameter. NOTE: for this question, since your console log should be inside your function, you only need to call/invoke the function after you write it rather than call/invoke it inside of a console.log.
 
@@ -30,7 +35,9 @@
 /*
 just figured something funny out. the arrow function (i assume
 because it is being declared with "let"), wouldnt let me call it
-ReferenceError: Cannot access 'repeat' before initialization 
+before declaring it. 
+Am I using the proper english explaination for this?
+"ReferenceError: Cannot access 'repeat' before initialization" 
 funny little things we learn
 
 I choose to do the "while" loop because i havent had alot of practice
@@ -71,6 +78,7 @@ function pyramidCountin(n) {
 console.log(buildNum)
 }
 pyramidCountin(6)
+
 // ---------- QUESTION 3 ----------
 // Write a function called 'noVowels' that take a string parameter and removes vowels from that string using a loop.
 
@@ -80,6 +88,11 @@ pyramidCountin(6)
 //    Q3: dvntrs
 
 // PUT YOUR CODE HERE
+
+
+function noVowels(str) {
+    for (let i = 0; i <= str.length;)
+}
 
 // ---------- QUESTION 4 ----------
 // Write a function called 'vowelCount' that takes 1 string parameter and returns the number of vowels in that string.
