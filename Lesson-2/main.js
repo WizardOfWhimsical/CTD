@@ -90,9 +90,51 @@ pyramidCountin(6)
 // PUT YOUR CODE HERE
 
 
+noVowels("Something super long with spaces")
+
 function noVowels(str) {
-    for (let i = 0; i <= str.length;)
+    // habbit of handling edge cases, couldnt remeber the reg.Ex for only letter
+    // sad part is, i remeber it being super easy [A-z]/g or some stuff. this 
+    // all coming back from memory in class. 
+    str = str.toLowerCase().split("")
+    // empty string to store constants
+    let it = "";
+    let vowels = "";
+    console.log(str)
+    for (let s of str) {
+        s !== "a" ? it += s : s !== "e" ? it += s : s !== "i" ? it += s : s !== "o" ? it += s : s !== "u" ? it += s : vowels += s; 
+        }
+   
+                   
+        console.log(it)
+    
+    // console.log("Q2: ",newStr) 
 }
+
+
+// switch (str[i]) {
+//             case "a":
+//                 str[i] += newStr;;
+//                 break;
+//             case "e":
+//                 str[i] += newStr;
+//                 break;
+//             case "i":
+//                 str[i] += newStr;;
+//                 break;
+//             case "o":
+//                 str[i] += newStr;;
+//                 break;
+//             case "u":
+//                 str[i] += newStr;;
+//                 break;
+//             case "y":
+//                 str[i] += newStr;;
+//                 break;
+
+//         }
+
+
 
 // ---------- QUESTION 4 ----------
 // Write a function called 'vowelCount' that takes 1 string parameter and returns the number of vowels in that string.
