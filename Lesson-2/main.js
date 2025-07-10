@@ -99,14 +99,28 @@ function noVowels(str) {
     str = str.toLowerCase().split("")
     // empty string to store constants
     let it = "";
-    let vowels = "";
+    // let vowels = "";
     console.log(str)
-    for (let s of str) {
-        s !== "a" ? it += s : s !== "e" ? it += s : s !== "i" ? it += s : s !== "o" ? it += s : s !== "u" ? it += s : vowels += s; 
-        }
-   
-                   
-        console.log(it)
+
+
+
+
+
+
+
+    function isVowel(string) {
+        switch (string) {
+        case "a":
+            return true;
+        case "e":
+            return true;
+        case "i":
+            return true;
+        case "o":
+            return true;
+        case "u":
+            return true;
+    }}
     
     // console.log("Q2: ",newStr) 
 }
