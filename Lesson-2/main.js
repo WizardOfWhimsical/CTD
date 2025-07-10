@@ -99,11 +99,17 @@ function noVowels(str) {
     str = str.toLowerCase().split("")
     // empty string to store constants
     let it = "";
-    let vowels = "";
+    // let vowels = "";
     console.log(str)
 
-    function isVowel(str) {
-        switch (str) {
+
+
+
+
+
+
+    function isVowel(string) {
+        switch (string) {
         case "a":
             return true;
         case "e":
