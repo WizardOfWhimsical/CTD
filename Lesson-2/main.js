@@ -102,11 +102,13 @@ function noVowels(str) {
     // let vowels = "";
     console.log(str)
 
+for(let s of str){
+if(!isVowel(s){
+it+=s;
 
+}
 
-
-
-
+}
 
     function isVowel(string) {
         switch (string) {
@@ -120,6 +122,8 @@ function noVowels(str) {
             return true;
         case "u":
             return true;
+default:
+return false;
     }}
     
     // console.log("Q2: ",newStr) 
