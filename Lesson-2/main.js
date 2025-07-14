@@ -90,26 +90,28 @@ pyramidCountin(6)
 // PUT YOUR CODE HERE
 
 
-noVowels("Something super long with spaces")
-
+const answer = noVowels("Something super long with spaces")
+console.log(answer)
 function noVowels(str) {
     // habbit of handling edge cases, couldnt remeber the reg.Ex for only letter
-    // sad part is, i remeber it being super easy [A-z]/g or some stuff. this 
-    // all coming back from memory in class. 
-    str = str.toLowerCase().split("")
-    // empty string to store constants
+    // sad part is, i remeber it being super easy [A-z]/g or some stuff. this
+    // all coming back from memory in class.
+    
+    // edgeCase spaceProtection
+    str = str.trim().toLowerCase().split("")
+    // empty string to store constants, this way i sont have to return an array
+    //  back to a string
     let it = "";
-    // let vowels = "";
-    console.log(str)
-
-for(let s of str){
-if(!isVowel(s){
-it+=s;
-
+    // for.of loop to flip through array
+    for (let s of str) {
+        // helper function for finding vowels and set to "!" so to return constants
+        if(!isVowel(s)){
+        it+=s;
+        }
+    }
+    return it;
 }
-
-}
-
+// helper function, might be able to use this else were
     function isVowel(string) {
         switch (string) {
         case "a":
@@ -122,38 +124,15 @@ it+=s;
             return true;
         case "u":
             return true;
-default:
-return false;
+        default:
+        return false;
     }}
     
-    // console.log("Q2: ",newStr) 
-}
 
 
-// switch (str[i]) {
-//             case "a":
-//                 str[i] += newStr;;
-//                 break;
-//             case "e":
-//                 str[i] += newStr;
-//                 break;
-//             case "i":
-//                 str[i] += newStr;;
-//                 break;
-//             case "o":
-//                 str[i] += newStr;;
-//                 break;
-//             case "u":
-//                 str[i] += newStr;;
-//                 break;
-//             case "y":
-//                 str[i] += newStr;;
-//                 break;
-
-//         }
-
-
-
+    /*
+    i cant make this up, i did not read ahead so as to not confuse my mind with other troubles from the assignment. imagine my excitement for this after making my previous helper function. DUDE!  :-}
+    */
 // ---------- QUESTION 4 ----------
 // Write a function called 'vowelCount' that takes 1 string parameter and returns the number of vowels in that string.
 
@@ -163,6 +142,22 @@ return false;
 //    Q4: 6
 
 // PUT YOUR CODE HERE
+
+// sudo: loop through string by reverting into an array.
+//        keep count on "true"
+// return count
+     
+let execution = vowelCount("So how long should i make this one?")
+console.log(execution)
+function vowelCount(str) {
+    let counter = 0;
+    str.trim().toLowerCase().split()
+
+    for (let s of str) {
+        if (isVowel(s)) { counter++ }
+    }
+    return counter;
+}
 
 // ---------- QUESTION 5 ----------
 // Write a function called 'numOfOdds' that takes 1 integer parameter and returns the number of odd numbers between 0 and that number, including the number if it's odd. (Hint: Use the modulo operator)
