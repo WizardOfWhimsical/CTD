@@ -310,7 +310,7 @@ function biggestStringLength(one, two) {
     }else{return (one.length+two.length)/2}
 }
 
-let finalThought = "I hope i atleast gave you a laugh or twon walking through my process and sharing my thoughts."
+let finalThought = "I hope i at least gave you a laugh or twon walking through my process and sharing my thoughts."
 
 console.log("Q15: ", biggestStringLength(word1, word2));
 
