@@ -149,7 +149,7 @@ function noVowels(str) {
      
 let execution = vowelCount("So how long should i make this one?")
 
-console.log("Q5: ", execution)
+console.log("Q4: ", execution)
 
 function vowelCount(str) {
     let counter = 0;
@@ -164,10 +164,31 @@ function vowelCount(str) {
 // ---------- QUESTION 5 ----------
 // Write a function called 'numOfOdds' that takes 1 integer parameter and returns the number of odd numbers between 0 and that number, including the number if it's odd. (Hint: Use the modulo operator)
 
-// EXAMPLE LOG:
-//    console.log("Q5: ", numOfOdds(15));
-// EXAMPLE OUTPUT:
-//    Q5: 8
+
+/*
+ok, lets break this down
+
+write a function
+takes 1 parameter (number)
+returns odd numbers from 0 to n
+including n if it is an odd number
+*/
+
+let odds = numOfOdds(35);
+console.log("Q5: ",odds)
+
+function numOfOdds(n) {
+    let count = 0;
+    // const numArray=[]
+    for (let i = 0; i <= n; i++){
+        if (i%2 !== 0){
+            // numArray.push(i)
+            count++
+        } 
+    }
+    // actually suposed to return number of odds ops
+    return count    
+}
 
 // PUT YOUR CODE HERE
 
