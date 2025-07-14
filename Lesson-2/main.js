@@ -148,7 +148,9 @@ function noVowels(str) {
 // return count
      
 let execution = vowelCount("So how long should i make this one?")
-console.log(execution)
+
+console.log("Q5: ", execution)
+
 function vowelCount(str) {
     let counter = 0;
     str.trim().toLowerCase().split()
