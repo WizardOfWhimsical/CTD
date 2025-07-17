@@ -55,7 +55,6 @@ let repeat = (n) => {
 }
 
 repeat(3)
-// console.log("hello")
 
 // ---------- QUESTION 2 ----------
 // Write a function called 'pyramidCounting' that takes 1 integer parameter and returns the sum of all of the numbers between 0 and the parameter.
@@ -129,12 +128,12 @@ function noVowels(str) {
     }}
     
 
-
-    /*
-    i cant make this up, i did not read ahead so as to not confuse my mind with other troubles from the assignment. imagine my excitement for this after making my previous helper function. DUDE!  :-}
-    */
 // ---------- QUESTION 4 ----------
 // Write a function called 'vowelCount' that takes 1 string parameter and returns the number of vowels in that string.
+
+   /*
+    i cant make this up, i did not read ahead so as to not confuse my mind with other troubles from the assignment. imagine my excitement for this after making my previous helper function. DUDE!  :-}
+    */
 
 // EXAMPLE LOG:
 //    console.log("Q4: ", vowelCount('I love to code.'));
@@ -167,10 +166,9 @@ function vowelCount(str) {
 
 /*
 ok, lets break this down
-
 write a function
 takes 1 parameter (number)
-returns odd numbers from 0 to n
+returns odd numbers from 0 to n WRONG return the AMOUNT of odds
 including n if it is an odd number
 */
 
@@ -203,10 +201,47 @@ function numOfOdds(n) {
 //    Q6 not empty: false
 
 // PUT YOUR CODE HERE
+// vartibles to hold data
+const empty = [], full = ["someString", 420, true];
+
+function arrayChecker(arr) {
+    // heres the fun part, numbers can be booleans.
+    // i do believe 0 is falsy, so an empty arrays returns 0
+    // just wanted to see if i could lol
+    // let answer = !arr.length ? true : false;
+    // return answer
+    if (!arr.length) { return true }
+    else{return false}
+}
+
+console.log("Q6: empty ", arrayChecker(empty))
+console.log("Q6: not empty ", arrayChecker(full))
+
+
 
 // ---------- QUESTION 7 ----------
 // Write a function called 'getElementAt' that takes an array parameter and an integer parameter.  The function should return the element in the array at the given number index or 'null' if it doesn't exist.  Use your 'full' variable from Question 6 to test.
 
+
+// indexof()
+
+/*
+BreakDown
+write a function
+takes arr param, intiger param
+use n to search array
+return element in array, null if none
+*/
+console.log("Q7 : ",getElementAt(full, 2))
+console.log("Q7 : ",getElementAt(full, 7))
+
+function getElementAt(arr, n) {
+    if (arr[n] === undefined) {
+        return null
+    }
+    
+    return arr[n]
+}
 // EXAMPLE LOGS:
 //    console.log("Q7: ", getElementAt(full, 2));
 //    console.log("Q7: ", getElementAt(full, 7));
@@ -228,8 +263,27 @@ function numOfOdds(n) {
 
 // PUT YOUR CODE HERE
 
+
+function insertInArray(f) {
+    let newArray = f.slice(0);
+    newArray.splice(1, 0, 0)
+    return newArray
+}
+
+console.log("Q8 :",insertInArray(full))
+console.log("Q8 original array:",full)
 // ---------- QUESTION 9 ----------
 // Write a function called 'compareArrays' that takes two Array parameters (containing numbers or strings only) and returns true if they are equal, false if not.  The purpose of this function should be to look at each element of the two arrays and compare them, returning false when they either hit two items that don't match, or returning false if the two arrays themselves are different lengths. You can test this with the 'empty' and 'full' variables from Question 6, and/or you can create a variable called 'compare' and assign it an array identical to 'full' to compare those.  To further test your function's accuracy, create a new variable called 'part' that is a partial copy of the 'full' variable and test that as well.
+
+
+/*
+step 1:write a function takes 2 params
+step 2: returns true if they are equal (===) and false if not
+step 3: 
+ */
+// if indexs dont match then its false
+
+// arr1[i]
 
 // REMEMBER: In JavaScript, 1 === '1' is false, but 1 == '1' is true. You'll need to use the triple equals operator which is more strict because it compares data type.
 
@@ -250,6 +304,26 @@ function numOfOdds(n) {
 
 // PUT YOUR CODE HERE
 
+// me and Joe worked this one, everything after it just kinda fell into place
+const compare=["someString",420,true]
+let part = ["someString",true]
+
+console.log("Q9: same: ",compareArrays(full, compare))
+console.log("Q9: different: ",compareArrays(full,empty))
+console.log("Q9: partial: ", compareArrays(full, part))
+
+function compareArrays(arr1, arr2) {
+    if (arr1.length !== arr2.length) {
+        return false
+    } 
+
+    for (let i = 0; i > arr1.length; i++){
+        if (arr1[i] !== arr2[i]) {
+            return false
+        }
+    }
+    return true;
+}
 // ---------- QUESTION 10 ----------
 // Create a variable called 'numbers' and assign it an array with at least 3 numbers as elements (example: [10, 3, 4]).  Write a function called 'calculateTotal' that takes one array parameter and loops through the array in order to return the sum of all the array elements.
 
@@ -261,7 +335,27 @@ function numOfOdds(n) {
 //    Q10: 17
 
 // PUT YOUR CODE HERE
+const numbers = [4 ** 8, 3 ** 9, 5 ** -10]
 
+console.log("Q10: ",calculateTotal(numbers))
+console.log("Q10: ",calculateTotal2(numbers))
+
+function calculateTotal(arr) {
+    let hold = 0;
+    for (let a of arr) {
+        hold += a;
+    }
+    return hold
+}
+
+
+function calculateTotal2(arr) {
+    // let hold = 0;
+    let all = arr.reduce((a, h) => {
+        return a+h
+    })
+    return all
+}
 // ---------- QUESTION 11 ----------
 // Write two functions called 'findEvens' and 'findOdds' that each take one array parameter and each returns a NEW Array of all the even or odd numbers as indicated.  NOTE: Assigning an array to a new variable does not make a copy, it's another reference to the same array.  To make a copy you can use the slice() method as in this example:
 // let newArray = originalArray.slice()
@@ -275,6 +369,34 @@ function numOfOdds(n) {
 //    Q11 odds: [3,19,7,93]
 
 // PUT YOUR CODE HERE
+let listNumbers = [10,2,3,19,7,6,93]
+console.log("Q11 evens:",findEvens(listNumbers))
+console.log("Q11 odds:",findOdds(listNumbers))
+
+
+function findEvens(array) {
+    // create empty array to hold the n
+    let hold = [];
+    // looping through with a for.of
+    for (let arr of array) {
+        // and the remainder operator to test if even
+        // then push into place holder for return
+        if(arr%2 === 0){hold.push(arr)}
+    }
+    return hold
+}
+// same as before but with the "!"(not) operator
+
+function findOdds(array) {
+     let hold = [];
+    for (let arr of array) {
+        if(arr%2 !== 0){hold.push(arr)}
+    }
+    return hold
+}
+
+
+
 
 // ---------- QUESTION 12 ----------
 // Write a function called 'makeSquares' that takes one array parameter and returns a NEW Array with the squared values of each of the numbers.  NOTE: Assigning an array to a new variable does not make a copy, it's another reference to the same array.  To make a copy you can use the slice() method as in this example:
@@ -288,6 +410,37 @@ function numOfOdds(n) {
 
 // PUT YOUR CODE HERE
 
+let toBeSquared = [2, 4, 6, 8]
+/*
+ i want to take a second to point out a few things that were tripping me up 
+ with these methods that has not been explained to me and i just got the
+  revelation after messing with my mentor yesterday.
+ when arrow functions are on one line, the return is implied. so looking at
+  this arrow function with .map() confused the hell outta me till i was
+  reading and that tid-bit flashed in my head. 
+
+let squared = toBeSquared.map((square)=>{
+  return square **2 
+  })
+
+let squared = toBeSquared.map(s => square(s))
+console.log("Q12: ",squared)
+
+  function square(s){
+  return s**2
+  }
+  }
+
+  so knowing that each one needs a return because a new person can forget that or just not know it looking at the material. i feel this might be one of those things that gets over looked and may confuse people. even though the knowledge is in their head they have not connected the dots. or atleast it took me for ever
+*/
+
+let squared = toBeSquared.map(square => square **2)
+
+
+console.log("Q12: ",squared)
+
+
+
 // ---------- QUESTION 13 ----------
 // Back in the old days, the early 2000s, this was a famous technical interview question. Write a function definition that takes NO parameters. The function will loop from 1 to 15 and return an array of numbers. While looping, the function will check if the current value in the loop is divisible by 3, by 5, or by both. If the current value in the loop is divisible by 3, the function will add the string "fizz" to an array. If the current value in the loop is divisible by 5, the function will add the string "buzz" to the array. If the current value in the loop is divisible by both, the function will add the value "fizzbuzz" to the array. If the number isn't divisible by 3, 5, OR both, it will add the number to the array.  The function will return the array of values.
 
@@ -297,6 +450,30 @@ function numOfOdds(n) {
 //    BONUS: [1,2,'fizz',4,'buzz','fizz',7,8,'fizz','buzz',11,'fizz',13,14,'fizzbuzz']
 
 // PUT YOUR CODE HERE
+
+
+console.log("Q13: ", fizzBuzz())
+function fizzBuzz() {
+   let hold = []
+for (let n = 1; n <= 15; n++){
+    switch (true) {
+    case n%15 ===0:
+        hold.push("fizzBuzz");
+        break;
+    case n%5===0:
+        hold.push("fizz");
+        break;
+    case n%3===0:
+        hold.push("buzz");
+        break; 
+    default:
+        hold.push(n)
+}
+}
+return hold 
+}
+
+
 
 // FIZZBUZZ!!  
 // i first did this as an exercise in eloquent javascript
