@@ -263,6 +263,9 @@ function getElementAt(arr, n) {
 
 // PUT YOUR CODE HERE
 
+// so i want to give thanks to God, and then the guy who randomly posted array
+//  methods is CTD allstudent convo i think. And you guys really do give all
+//  kinds of hints and help. i am a basic knowledge type guy (or so it feels). 
 
 function insertInArray(f) {
     let newArray = f.slice(0);
@@ -348,7 +351,7 @@ function calculateTotal(arr) {
     return hold
 }
 
-
+// notes follow on this one
 function calculateTotal2(arr) {
     // let hold = 0;
     let all = arr.reduce((a, h) => {
@@ -431,7 +434,7 @@ console.log("Q12: ",squared)
   }
   }
 
-  so knowing that each one needs a return because a new person can forget that or just not know it looking at the material. i feel this might be one of those things that gets over looked and may confuse people. even though the knowledge is in their head they have not connected the dots. or atleast it took me for ever
+  so knowing that each one needs a return when not on one line, because a new person can forget that or just not know it looking at the material. i feel this might be one of those things that gets over looked and may confuse people. even though the knowledge is in their head they have not connected the dots. or atleast it took me for ever
 */
 
 let squared = toBeSquared.map(square => square **2)
@@ -473,7 +476,6 @@ for (let n = 1; n <= 15; n++){
 return hold 
 }
 
-
-
+console.log("As always Noah, have a freat day and if you want to talk about any of this i am more than happy to sir ;p")
 // FIZZBUZZ!!  
 // i first did this as an exercise in eloquent javascript
