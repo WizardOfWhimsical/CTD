@@ -30,6 +30,14 @@
 //    Q1 color: brown
 
 // PUT YOUR CODE HERE
+let myPet = {};
+myPet.name = "Teddy";
+myPet.species = "ferret";
+myPet.color = "brown";
+console.log(myPet)
+console.log("Q1 name: ", myPet.name);
+console.log("Q1 species: ", myPet.species);
+console.log("Q1 color: ", myPet.color);
 
 // ---------- QUESTION 2 ----------
 // Now let's see how we can use the property:value pairs in template literals.  Create a variable called 'aboutPet' and assign it a template literal that uses the 'myPet' object to make a sentence sharing all the pet details.  The sentence should look something like this: "Teddy is a brown ferret."
