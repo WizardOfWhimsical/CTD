@@ -48,7 +48,8 @@ console.log("Q1 color: ", myPet.color);
 //    Q2: Teddy is a brown ferret.
 
 // PUT YOUR CODE HERE
-
+let aboutPet = `${myPet.name} is a ${myPet.color} ${myPet.species}`;
+console.log("Q2: ",aboutPet);
 // ---------- QUESTION 3 ----------
 // Let's add a method to our object.  Create a method called 'age' that takes no parameters, and uses no outside variables (hint: use 'this').  The method should return the age of the pet in years.
 
@@ -57,7 +58,28 @@ console.log("Q1 color: ", myPet.color);
 // EXAMPLE OUTPUT:
 //    Q3: 7
 
+/*
+THESE WORK
+didnt use the .this keyword tho
+myPet.age = ()=>{
+console.log(7)
+}
+myPet.age()
+
+
+as always the wording is what gets me. if this one is wrong please i would love
+ to talk about it.
+*/
+
+
 // PUT YOUR CODE HERE
+ 
+myPet.years = 7;
+myPet.age = function (){
+    return this.years = 7;
+}
+console.log("Q3: ", myPet.age())
+
 
 // Don't forget your console.logs!
 
@@ -71,7 +93,14 @@ console.log("Q1 color: ", myPet.color);
 // NOTE: if when you made 'myPet' in Question 1, you did put dog as species, you should get true as your output instead.
 
 // PUT YOUR CODE HERE
+// myPet.species = "dog"
 
+function isDog(obj) {
+    if (obj.species === "dog") { return true }
+    return false
+}
+
+console.log("Q4: ",isDog(myPet))
 // ---------- QUESTION 5 ----------
 // Now lets work with date and time
 // Create a function called 'month'.  Inside the function, declare a variable named 'today' that uses the Date object.  Your function should then return only the month of the 'today' variable.  You can return the month as a number
