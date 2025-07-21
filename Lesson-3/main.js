@@ -114,6 +114,48 @@ console.log("Q4: ",isDog(myPet))
 //    Q5: January
 
 // PUT YOUR CODE HERE
+function month() {
+    let prac = Date();
+let practice = prac.split(" ") ;
+
+    let today = practice[1];
+//did the switch to get full name
+    switch (today) {
+        case "Jan":
+            return "January"
+        case "Feb":
+            return "Febuary"
+        case "Mar":
+            return "March"
+        case "Apr":
+            return "April"
+        case "May":
+            return "Duh!"
+        case "Jun":
+            return "June"
+        case "Jul":
+            return "July"
+        case "Aug":
+            return "August"
+        case "Sep":
+            return "September"
+        case "Oct":
+            return "October"
+        case "Nov":
+            return "November"
+        case "Dec":
+            return "December"
+            default:
+                return today;
+    }
+
+}
+
+
+
+
+
+console.log("Q5: ", month())
 
 // ---------- QUESTION 6 ----------
 // Let's explore dates now.  Create a variable named 'birthday' and assign it the date of your next birthday.  Then create a function called 'birthdayCountdown' that takes birthday as a parameter and returns the number of days until your next birthday.  Remember that you may need to use a particular format for your birthday so you can properly convert the data to something you can use in the function.  CAUTION: 2024 is a leap year!
@@ -126,6 +168,32 @@ console.log("Q4: ",isDog(myPet))
 //    Q6: 41
 
 // PUT YOUR CODE HERE
+// thank you MDN-> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+
+
+/*
+
+*/
+
+
+
+
+
+
+
+
+let birthday = new Date("2025-10-13T00:00:00")
+let today = new Date()
+let timeLeft = birthday - today;
+
+
+
+
+
+console.log("*************")
+console.log(today)
+console.log(birthday)
+console.log(timeLeft/1000/60/60/25)
 
 // Set the date for the next birthday (YYYY-MM-DD format)
 
