@@ -171,29 +171,71 @@ console.log("Q5: ", month())
 // thank you MDN-> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 
 
-/*
+/**
+ * HELPER FUNCTIONS FORMATTING BDAY
+ * edge cases
+ * order numbers for formating into date obj
+ * make a string
+ * control hypens over slashes
+ * set T00:00:00 so it set to locale time
+ * lets not forget they might not put 0's on singles digits 
+ * 
+ */
 
-*/
 
 
 
 
 
-
-
-
-let birthday = new Date("2025-10-13T00:00:00")
-let today = new Date()
+let birthday = birthdayFormatting(10/13/1985);
+let today = new Date();
+// i am going to assume that birthday being later in the year will be first
+// if bday is past then the date will be considered less than and can push 
+// year to next year
 let timeLeft = birthday - today;
-
+// console.log(timeLeft)
+timeLeft = timeLeft / 1000 / 60 / 60 / 24
+// console.log(timeLeft)
+timeLeft = Math.round(timeLeft);
 
 
 
 
 console.log("*************")
-console.log(today)
-console.log(birthday)
-console.log(timeLeft/1000/60/60/25)
+console.log(timeLeft)
+
+
+function birthdayFormatting(date) {
+
+    // if they put n instead of string
+    if (typeof date !== NaN) {
+        console.log("Needs to be in string format")
+    }
+    // date in num yyyy-mm-dd
+    // check for / to replace with -
+//   date = JSON.stringify(date)
+    console.log(date)
+    date.replace("/", "-")//replace slashes with hypens
+    console.log(date)  
+    // console.log(date)
+    // date.split("-")//makes array
+    // console.log(date)
+    // // loopin through the array to format the date properly 
+    // for (let d of date) {
+    //     if (d.length === 4) { hold[0] }
+    //     else if (d.length === 2) {
+    //         if(d>=12){hold[1]=d}
+    //         else { hold[2] = d };
+    //     }else{hold[1]=d}
+    // }
+    // console.log(date)
+    // // need to turn array back into string
+    // date = date.join()
+    // console.log(date)
+    // let birthday = new Date(`${date}T00:00:00`)
+    // return birthday
+    
+}
 
 // Set the date for the next birthday (YYYY-MM-DD format)
 
