@@ -172,54 +172,53 @@ console.log("Q5: ", month())
 
 
 /**
- * HELPER FUNCTIONS FORMATTING BDAY
- * edge cases
- * order numbers for formating into date obj
- * make a string
- * control hypens over slashes
- * set T00:00:00 so it set to locale time
- * lets not forget they might not put 0's on singles digits 
- * 
+  // 2025-10-13T04:00:00.000Z
+    let birthday = new Date(bday)
+    console.log(birthday)
+    const today = new Date()
+    // could recieve the year of birth not current
+    // failsafe .set
+    birthday.setFullYear(today.getFullYear())
+    // checking if today is past bday
+    if (today > birthday) {
+        birthday.setFullYear(today.getFullYear()+1)
+    }
+    let time = birthday.getTime() - today.getTime();
+    time = Math.ceil(time/1000/60/60/24)
+    console.log("Test: ",time)
  */
 
-
-
-
-
-
 let birthday = birthdayFormatting("1985-10-13");
-// let today = new Date();
-// // i am going to assume that birthday being later in the year will be first
-// // if bday is past then the date will be considered less than and can push 
-// // year to next year
-// let timeLeft = birthday - today;
-// // console.log(timeLeft)
-// timeLeft = timeLeft / 1000 / 60 / 60 / 24
-// // console.log(timeLeft)
-// timeLeft = Math.round(timeLeft);
-
-// birthdayFormatting("10/13/1985")
+console.log("Q6: ",birthdayCountdown(birthday))
 
 
-// console.log("*************")
-// console.log(timeLeft)
-
-// let date = 10/13/1985
+function birthdayCountdown(bday) {
+    let today = new Date();
+     // could recieve the year of birth not current
+    // failsafe .set ^^^ty Jo(mentor)^^^
+    bday.setFullYear(today.getFullYear())
+    // checking if today is past bday
+    if (today > bday) {
+        bday.setFullYear(today.getFullYear()+1)
+    }
+    let timeLeft = bday - today;
+    timeLeft = timeLeft / 1000 / 60 / 60 / 24
+    timeLeft = Math.ceil(timeLeft);
+    return timeLeft;
+}
+//to handle some stupid edge cases, tbh i spent 2 days doing this
 function birthdayFormatting(date) {
-console.log(date)
     // if they put n instead of string
     if (typeof date === "number") {
         console.log("first IF: ", date)
         console.log("Needs to be in string format YYYY-MM-DD")
     } else if (typeof date === "string") {
         const birthday = new Date(`${date}T00:00:00`);
-    return birthday
+        if (isNaN(birthday.getTime())) {//MDN notes this is most reliable way to check, tho i can get it from .getYear() if i remeber correctly
+            console.log("YYYY-MM-DD format will hyphens and make sure you put quotes around it...")
+        }else if(birthday instanceof Date){return birthday}
     } else{console.log("IDK what you did but you broke it good!!")}
-    
-    
 }
-
-
 // Set the date for the next birthday (YYYY-MM-DD format)
 
 // ---------- QUESTION 7 ----------
@@ -255,6 +254,17 @@ console.log(date)
 //    Q8 neg num: 11
 
 // PUT YOUR CODE HERE
+
+
+
+
+
+
+
+
+
+
+
 
 // ---------- QUESTION 9 ----------
 // Create a function called 'convertTemp' that takes 1 temperatue parameter in celsius and return the temperature in Fahrenheit.  Log both the input and output values
