@@ -187,55 +187,38 @@ console.log("Q5: ", month())
 
 
 
-let birthday = birthdayFormatting(10/13/1985);
-let today = new Date();
-// i am going to assume that birthday being later in the year will be first
-// if bday is past then the date will be considered less than and can push 
-// year to next year
-let timeLeft = birthday - today;
+let birthday = birthdayFormatting("1985-10-13");
+// let today = new Date();
+// // i am going to assume that birthday being later in the year will be first
+// // if bday is past then the date will be considered less than and can push 
+// // year to next year
+// let timeLeft = birthday - today;
+// // console.log(timeLeft)
+// timeLeft = timeLeft / 1000 / 60 / 60 / 24
+// // console.log(timeLeft)
+// timeLeft = Math.round(timeLeft);
+
+// birthdayFormatting("10/13/1985")
+
+
+// console.log("*************")
 // console.log(timeLeft)
-timeLeft = timeLeft / 1000 / 60 / 60 / 24
-// console.log(timeLeft)
-timeLeft = Math.round(timeLeft);
 
-
-
-
-console.log("*************")
-console.log(timeLeft)
-
-
+// let date = 10/13/1985
 function birthdayFormatting(date) {
-
+console.log(date)
     // if they put n instead of string
-    if (typeof date !== NaN) {
-        console.log("Needs to be in string format")
-    }
-    // date in num yyyy-mm-dd
-    // check for / to replace with -
-//   date = JSON.stringify(date)
-    console.log(date)
-    date.replace("/", "-")//replace slashes with hypens
-    console.log(date)  
-    // console.log(date)
-    // date.split("-")//makes array
-    // console.log(date)
-    // // loopin through the array to format the date properly 
-    // for (let d of date) {
-    //     if (d.length === 4) { hold[0] }
-    //     else if (d.length === 2) {
-    //         if(d>=12){hold[1]=d}
-    //         else { hold[2] = d };
-    //     }else{hold[1]=d}
-    // }
-    // console.log(date)
-    // // need to turn array back into string
-    // date = date.join()
-    // console.log(date)
-    // let birthday = new Date(`${date}T00:00:00`)
-    // return birthday
+    if (typeof date === "number") {
+        console.log("first IF: ", date)
+        console.log("Needs to be in string format YYYY-MM-DD")
+    } else if (typeof date === "string") {
+        const birthday = new Date(`${date}T00:00:00`);
+    return birthday
+    } else{console.log("IDK what you did but you broke it good!!")}
+    
     
 }
+
 
 // Set the date for the next birthday (YYYY-MM-DD format)
 

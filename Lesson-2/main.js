@@ -98,7 +98,7 @@ function noVowels(str) {
     
     // edgeCase spaceProtection
     str = str.trim().toLowerCase().split("")
-    // empty string to store constants, this way i sont have to return an array
+    // empty string to store constants, this way i dont have to return an array
     //  back to a string
     let it = "";
     // for.of loop to flip through array
