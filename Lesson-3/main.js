@@ -1,33 +1,10 @@
-//---------- OVERVIEW AND INSTRUCTIONS ----------
+//---------- OVERVIEW AND INSTRUCTIONS ------
 
 //-------------------------------------------
 // LESSON 3 OBJECTS
 //-------------------------------------------
+// ---------- QUESTION 1 --------------------
 
-//# JavaScript Objects
-// This is the coding assignment for the third week of the Intro to Programming course from Code the Dream. The concepts touched on in this assignment include:
-//   - Object Basics
-//   - Primitive vs Object Types
-//   - Object De-structuring
-//   - Manipulating Objects
-
-// In this assignment you will write your own code. Your instructions are listed as "comments", meaning the instructions are grayed out and start with '//' at the beginning of the line of code. Put your answers immediately below the instructions for each question. You'll need to use console logs for all the questions to check your code output. Using a function in a console.log is very similar to how you were using them with variables last week. To invoke/call the function use the syntax:
-
-//  console.log("Q#: ", functionName(anyInput))
-
-// Please be sure to check the output of your called functions and console logs in the Console on this screen. Check to make sure that the output you get in your Console is the expected output.
-
-// ---------- QUESTION 1 ----------
-// Objects are a way to store property:value pairs of data in a variable.  First, create an object called 'myPet'.  Add three properties called 'name', 'species', and 'color' to the 'myPet' object below and assign each of them values.  Use your console.log's to print the values of each property to the console.
-
-// EXAMPLE LOG:
-//    console.log("Q1 name: ", myPet.name);
-//    console.log("Q1 species: ", myPet.species);
-//    console.log("Q1 color: ", myPet.color);
-// EXAMPLE OUTPUT:
-//    Q1 name: Teddy
-//    Q1 species: ferret
-//    Q1 color: brown
 
 // PUT YOUR CODE HERE
 let myPet = {};
@@ -40,23 +17,11 @@ console.log("Q1 species: ", myPet.species);
 console.log("Q1 color: ", myPet.color);
 
 // ---------- QUESTION 2 ----------
-// Now let's see how we can use the property:value pairs in template literals.  Create a variable called 'aboutPet' and assign it a template literal that uses the 'myPet' object to make a sentence sharing all the pet details.  The sentence should look something like this: "Teddy is a brown ferret."
-
-// EXAMPLE LOG:
-//    console.log("Q2: ", aboutPet);
-// EXAMPLE OUTPUT:
-//    Q2: Teddy is a brown ferret.
 
 // PUT YOUR CODE HERE
 let aboutPet = `${myPet.name} is a ${myPet.color} ${myPet.species}`;
 console.log("Q2: ",aboutPet);
 // ---------- QUESTION 3 ----------
-// Let's add a method to our object.  Create a method called 'age' that takes no parameters, and uses no outside variables (hint: use 'this').  The method should return the age of the pet in years.
-
-// EXAMPLE LOG:
-//    console.log("Q3: ", myPet.age());
-// EXAMPLE OUTPUT:
-//    Q3: 7
 
 /*
 THESE WORK
@@ -71,7 +36,6 @@ as always the wording is what gets me. if this one is wrong please i would love
  to talk about it.
 */
 
-
 // PUT YOUR CODE HERE
  
 myPet.years = 7;
@@ -80,17 +44,7 @@ myPet.age = function (){
 }
 console.log("Q3: ", myPet.age())
 
-
-// Don't forget your console.logs!
-
 // ---------- QUESTION 4 ----------
-// Now, let's see how we can use data within objects in functions.  Write a function called 'isDog' that takes one object parameter.  In the function, create a variable called 'speciesChecker' and assign it the value 'dog'.  Then, still in the function, return true if the object's species value is equal to the variable 'speciesChecker', or false if not.
-
-// EXAMPLE LOG:
-//    console.log("Q4: ", isDog(myPet));
-// EXAMPLE OUTPUT: (if your 'myPet' object from Question 1 is about any animal other than a dog)
-//    false
-// NOTE: if when you made 'myPet' in Question 1, you did put dog as species, you should get true as your output instead.
 
 // PUT YOUR CODE HERE
 // myPet.species = "dog"
@@ -102,16 +56,6 @@ function isDog(obj) {
 
 console.log("Q4: ",isDog(myPet))
 // ---------- QUESTION 5 ----------
-// Now lets work with date and time
-// Create a function called 'month'.  Inside the function, declare a variable named 'today' that uses the Date object.  Your function should then return only the month of the 'today' variable.  You can return the month as a number
-// STRETCH GOAL: Return the month as a string
-
-// EXAMPLE LOG:
-//    console.log("Q5: ", month());
-// EXAMPLE OUTPUT: (Will be different for each class but should be the current month.  For example if you're doing this assignment in January...)
-//    Q5: 01
-//    stretch goal should result in:
-//    Q5: January
 
 // PUT YOUR CODE HERE
 function month() {
@@ -152,20 +96,9 @@ let practice = prac.split(" ") ;
 }
 
 
-
-
-
 console.log("Q5: ", month())
 
 // ---------- QUESTION 6 ----------
-// Let's explore dates now.  Create a variable named 'birthday' and assign it the date of your next birthday.  Then create a function called 'birthdayCountdown' that takes birthday as a parameter and returns the number of days until your next birthday.  Remember that you may need to use a particular format for your birthday so you can properly convert the data to something you can use in the function.  CAUTION: 2024 is a leap year!
-
-// STRETCH GOAL: As we mentioned in Question 8, you should consider boundary cases. What if the date wasn't formatted to work with your function?
-
-// EXAMPLE LOG:
-//    console.log("Q6: ", birthdayCountdown(birthday));
-// EXAMPLE OUTPUT: (if your next birthday was March 15, 2024 and today was February 3, 2024)
-//    Q6: 41
 
 // PUT YOUR CODE HERE
 // thank you MDN-> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
@@ -188,9 +121,8 @@ console.log("Q5: ", month())
     console.log("Test: ",time)
  */
 
-let birthday = birthdayFormatting("1985-10-13");
+let birthday = dayFormatting("1985-10-13");
 console.log("Q6: ",birthdayCountdown(birthday))
-
 
 function birthdayCountdown(bday) {
     let today = new Date();
@@ -207,10 +139,10 @@ function birthdayCountdown(bday) {
     return timeLeft;
 }
 //to handle some stupid edge cases, tbh i spent 2 days doing this
-function birthdayFormatting(date) {
+function dayFormatting(date) {
     // if they put n instead of string
     if (typeof date === "number") {
-        console.log("first IF: ", date)
+        // console.log("first IF: ", date)
         console.log("Needs to be in string format YYYY-MM-DD")
     } else if (typeof date === "string") {
         const birthday = new Date(`${date}T00:00:00`);
@@ -219,80 +151,99 @@ function birthdayFormatting(date) {
         }else if(birthday instanceof Date){return birthday}
     } else{console.log("IDK what you did but you broke it good!!")}
 }
-// Set the date for the next birthday (YYYY-MM-DD format)
 
 // ---------- QUESTION 7 ----------
-// If we work with dates, we should work with time also.  Create a variable named 'startTime' and assign it a start time.  Create a variable named 'endTime' and assign it an end time.  Then create a function called 'timeDifference' that takes startTime and endTime as parameters and returns the number of hours and minutes between the start and end times.  Remember that you may need to be careful what format you use when entering times so you can properly convert the data to something you can use in the function.
 
-// STRETCH GOAL: You should consider boundary cases. What if the times are not formatted to work with your function?
-
-// EXAMPLE LOG:
-//    console.log("Q7: ", timeDifference(startTime, endTime));
-// EXAMPLE OUTPUT: (if startTime was 12:37pm and endTime was 3:19pm)
-//    Q7: 2 hours and 42 minutes
-
+/**
+ * create 2 varibles startTime and endTime
+ * assign 2 different dates to each
+ * create function called timeDifference
+ * timeDifference figures out (in hours and minutes) its funct name 
+ * use previously made helper funtion
+ */
 // PUT YOUR CODE HERE
+const startTime = dayFormatting("2025-10-13")
+const endTime = dayFormatting("2027-10-13")
+
+timeDifference(startTime, endTime)
+
+function timeDifference(start, end) {
+    let difference = end.getTime() - start.getTime()
+    console.log("1st ",difference)
+    let hoursDiff = difference / 1000 / 60 / 60
+    console.log("2nd ", hoursDiff / 24)
+    return `Q7: ${hoursDiff} hours is 2 years in hours`
+
+}
 
 // ---------- QUESTION 8 ----------
-// Create a function called 'absDiff' that takes 2 parameters and returns the absolute difference between them. For example, if the first parameter is smaller than the second, the first parameter will be subtracted from the second. If the first parameter is larger than the second, the second parameter will be subtracted from the first. If they are both equal, return the first parameter subtracted by the second.  It's important to consider boundary cases - situations that may change how you expect your code to behave.  For this reason, work with same numbers and negative numbers as well to see if you get your absDiff function to calculate the absolute difference regardless of number type.
 
-// EXAMPLE LOG 1:
-//    console.log("Q8 first larger: ", absDiff(29, 5));
-// EXAMPLE OUTPUT: (if using the numbers 29 and 5 as in the example log)
-//    Q8 first larger: 24
-// EXAMPLE LOG 2:
-//    console.log("Q8 second larger: ", absDiff(3, 16));
-// EXAMPLE OUTPUT: (if using the numbers 3 and 16 as in the example log)
-//    Q8 second larger: 13
-// EXAMPLE LOG 3:
-//    console.log("Q8 same nums: ", absDiff(5, 5));
-// EXAMPLE OUTPUT 3: (if using the numbers 5 and 5 as in the example log)
-//    Q8 same nums: 0
-// EXAMPLE LOG 4:
-//    console.log("Q8 neg num: ", absDiff(-6, 5));
-// EXAMPLE OUTPUT 4: (if using the numbers -6 and 5 as in the example log)
-//    Q8 neg num: 11
+// this was so easy it confused me, forgot that these arent hoisted
+const absDiff = (a, b) => {
+        // console.log("1st")
+       return Math.abs(a-b)
+}
 
-// PUT YOUR CODE HERE
-
-
-
-
-
-
-
-
-
-
+console.log("Q8 first larger: ", absDiff(29, 5));
+console.log("Q8 second larger: ", absDiff(3, 16));
+console.log("Q8 same nums: ", absDiff(5, 5));
+console.log("Q8 neg num: ", absDiff(-6, 5));
 
 
 // ---------- QUESTION 9 ----------
-// Create a function called 'convertTemp' that takes 1 temperatue parameter in celsius and return the temperature in Fahrenheit.  Log both the input and output values
-
-// EXAMPLE LOG:
-//    console.log("Q9 convertTemp: ", celsiusTemp, convertTemp(celsiusTemp));
-// EXAMPLE OUTPUT:
-//    Q9 convertTemp: 0 32
-// Create logs for several different celsium temperatures
+// i put {} on it thinking the return was implied, but realized that
+// the {} makes it block, so id have to "return". learned somethign new 
+// yes i am aware teplate literal turns n into string
 
 // PUT YOUR CODE HERE
+let celsiusTemp = 100;
+const convertTemp = (c) => (c*9/5)+32
+console.log(`Q9 convertTemp: ${celsiusTemp} : ${convertTemp(celsiusTemp)}`);
 
 // ---------- QUESTION 10 ----------
-// Create a function called 'reverseString' that takes 1 string parameter and returns the reverseString.  Log both the input and output values
-
-// EXAMPLE LOG:
-//    console.log("Q10 reverseString: ", inputString, reverseString(inputString));
-// EXAMPLE OUTPUT:
-//    Q10 reverseString: HelloWorld dlroWolleH
-
 // PUT YOUR CODE HERE
 
+let inputString = "Im riding my bike with no hadle bars"
+
+console.log("Q10 reverseString: ", inputString, reverseString(inputString));
+
+function reverseString(str) {
+    let hold = [];
+    // let counter = 0;
+    for (let i = 0; i <= str.length; i++){
+        hold.push(str[str.length-i])
+    }
+    return hold.join("")
+}
 // ---------- QUESTION 11 ----------
-// Declare a variable named "diameter" and assign it an integer value. Through a series of math calculations and variables, calculate the "radius" (which is half the diameter), the "circumference" (which is 2 multiplied by the Math value pi, multiplied by the radius) and the "area" (which is the Math value pi, multiplied by the radius squared).
+//[X] Declare a variable named "diameter" and assign it an integer value. 
+// 
+//[x] Through a series of math calculations and variables, calculate the "radius" (which is half the diameter), 
+//
+// [] the "circumference" (which is 2 multiplied by the Math value pi, multiplied by the radius) 
+// 
+// and the "area" (which is the Math value pi, multiplied by the radius squared).
 
 // PUT YOUR CODE HERE
 
-// Don't forget your console.logs!
+
+// i am aloud to google math formulas right 
+
+let diameter = 3;
+// if d = 2r then we just divide to get the answer basic math
+let radius = diameter/2
+// if C = 2*PI(3.14)*r then we just pass radius in and vewhlaya
+let circumference = 2 * Math.PI * radius;
+console.log(circumference)
+
+
+
+
+
+
+
+
+
 
 // ---------- QUESTION 12 ----------
 // Let's make a useful math problem - create a tip calculator! Declare two variables called "billTotal" and "tipPercentage". Assign billTotal a floating point number with two decimal places. Assign tipPercentage a floating point number between 0.1 and 0.9. Create a third variable called "tip" that will multiply tipPercentage and billTotal then use the addition assignment operator to add that amount back to billTotal. Example: if our bill 35.75 and we want to leave a 20% tip (0.2) our new billTotal should come out to 42.90.
