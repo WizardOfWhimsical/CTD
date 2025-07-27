@@ -226,24 +226,16 @@ function reverseString(str) {
 
 // PUT YOUR CODE HERE
 
-
-// i am aloud to google math formulas right 
-
 let diameter = 3;
 // if d = 2r then we just divide to get the answer basic math
-let radius = diameter/2
+let radius = diameter / 2
+console.log(radius)
 // if C = 2*PI(3.14)*r then we just pass radius in and vewhlaya
 let circumference = 2 * Math.PI * radius;
 console.log(circumference)
-
-
-
-
-
-
-
-
-
+// Circle: Area = π × radius squared (A = πr²) ** operator for power to:
+let area = Math.PI*(radius**2)
+console.log(area)
 
 // ---------- QUESTION 12 ----------
 // Let's make a useful math problem - create a tip calculator! Declare two variables called "billTotal" and "tipPercentage". Assign billTotal a floating point number with two decimal places. Assign tipPercentage a floating point number between 0.1 and 0.9. Create a third variable called "tip" that will multiply tipPercentage and billTotal then use the addition assignment operator to add that amount back to billTotal. Example: if our bill 35.75 and we want to leave a 20% tip (0.2) our new billTotal should come out to 42.90.
