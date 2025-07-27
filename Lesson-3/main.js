@@ -5,8 +5,6 @@
 //-------------------------------------------
 // ---------- QUESTION 1 --------------------
 
-
-// PUT YOUR CODE HERE
 let myPet = {};
 myPet.name = "Teddy";
 myPet.species = "ferret";
@@ -18,7 +16,6 @@ console.log("Q1 color: ", myPet.color);
 
 // ---------- QUESTION 2 ----------
 
-// PUT YOUR CODE HERE
 let aboutPet = `${myPet.name} is a ${myPet.color} ${myPet.species}`;
 console.log("Q2: ",aboutPet);
 // ---------- QUESTION 3 ----------
@@ -95,12 +92,10 @@ let practice = prac.split(" ") ;
 
 }
 
-
 console.log("Q5: ", month())
 
 // ---------- QUESTION 6 ----------
 
-// PUT YOUR CODE HERE
 // thank you MDN-> https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 
 
@@ -180,7 +175,6 @@ function timeDifference(start, end) {
 
 // this was so easy it confused me, forgot that these arent hoisted
 const absDiff = (a, b) => {
-        // console.log("1st")
        return Math.abs(a-b)
 }
 
@@ -195,13 +189,11 @@ console.log("Q8 neg num: ", absDiff(-6, 5));
 // the {} makes it block, so id have to "return". learned somethign new 
 // yes i am aware teplate literal turns n into string
 
-// PUT YOUR CODE HERE
 let celsiusTemp = 100;
 const convertTemp = (c) => (c*9/5)+32
 console.log(`Q9 convertTemp: ${celsiusTemp} : ${convertTemp(celsiusTemp)}`);
 
 // ---------- QUESTION 10 ----------
-// PUT YOUR CODE HERE
 
 let inputString = "Im riding my bike with no hadle bars"
 
@@ -220,47 +212,58 @@ function reverseString(str) {
 // 
 //[x] Through a series of math calculations and variables, calculate the "radius" (which is half the diameter), 
 //
-// [] the "circumference" (which is 2 multiplied by the Math value pi, multiplied by the radius) 
+// [X] the "circumference" (which is 2 multiplied by the Math value pi, multiplied by the radius) 
 // 
-// and the "area" (which is the Math value pi, multiplied by the radius squared).
-
-// PUT YOUR CODE HERE
+//[x] and the "area" (which is the Math value pi, multiplied by the radius squared).
 
 let diameter = 3;
 // if d = 2r then we just divide to get the answer basic math
 let radius = diameter / 2
-console.log(radius)
+console.log("Q11 circle stuff: ", Math.round(radius));
+
 // if C = 2*PI(3.14)*r then we just pass radius in and vewhlaya
 let circumference = 2 * Math.PI * radius;
-console.log(circumference)
+console.log("Q11 circle stuff: ", Math.round(circumference));
+
 // Circle: Area = π × radius squared (A = πr²) ** operator for power to:
 let area = Math.PI*(radius**2)
-console.log(area)
+console.log("Q11 circle stuff: ", Math.round(area));
 
 // ---------- QUESTION 12 ----------
-// Let's make a useful math problem - create a tip calculator! Declare two variables called "billTotal" and "tipPercentage". Assign billTotal a floating point number with two decimal places. Assign tipPercentage a floating point number between 0.1 and 0.9. Create a third variable called "tip" that will multiply tipPercentage and billTotal then use the addition assignment operator to add that amount back to billTotal. Example: if our bill 35.75 and we want to leave a 20% tip (0.2) our new billTotal should come out to 42.90.
+// Let's make a useful math problem - create a tip calculator!
+// So that is what i did noah, i feel like that can plug into any POS system
+class TipAddedToBill{
+    constructor(billTotal, tipPercentage) { 
+        this.billTotal = billTotal;
+        this.tipPercentage = tipPercentage;
+    }
+    addTip() {
+        let tip = this.billTotal * this.tipPercentage;
+        let manipulate = Math.round((this.billTotal + tip) * 100);
+        return manipulate / 100
+    }
 
-// PUT YOUR CODE HERE
-
-// Don't forget your console.logs!
+}
+let billTotal = 58.76;
+let tipPercentage = 0.2
+let total = new TipAddedToBill(billTotal,tipPercentage)
+console.log("Q12: ",total.addTip())
 
 // ---------- QUESTION 13 ----------
-// Create two variables named 'num1' and 'num2' and assign them integer values. Create a function called 'multiplyThese' that takes 2 parameters and returns the product  of the two parameters (as a reminder, a product is the resulting number when two numbers are multiplied together).
 
-// EXAMPLE LOG:
-//    console.log("Q13: ", multiplyThese(num1, num2));
-// EXAMPLE OUTPUT: (if num1 and num2 are 2 and 5 respectively))
-//    Q13: 10
+let num1 = 4;
+let num2 = 2;
+console.log("Q13: ", multiplyThese(num1, num2))
 
-// PUT YOUR CODE HERE
+function multiplyThese(a, b) {
+    return a*b
+}
 
 // ---------- QUESTION 14 ----------
-// Building on the last question, create a function called 'getAverage' that takes 2 parameters and returns their average (hint: there is no built-in average operator in JavaScript).  Use the variables (num1 and num2) you created in Question 6 to test your function.  NOTE: In some programming languages, the types of numbers you use in equations can effect what type of number (integer/floating point) you get as a result.  We suggest using 2.0 instead of 2 as you're calculating the average.
 
-// EXAMPLE LOG:
-//    console.log("Q14: ", getAverage(num1, num2));
-// EXAMPLE OUTPUT: (based on num1 and num2 above)
-//    Q14: 3.5
-
-// PUT YOUR CODE HERE
-// Create the function to calculate the average
+console.log("Q14: ", getAverage(num1, num2));
+function getAverage(a, b) {
+    let total = a + b
+    return total / 2
+    
+}
