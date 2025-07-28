@@ -23,44 +23,41 @@
 // Create an variable called 'names' and assign it an array of people's names.  Write a function called 'printNames' that uses the forEach array method to log each name in an array to the console.  Remember, since you're using the console.log in the function, you'll just want to call your function and pass it the array of names when testing your code.
 
 // EXAMPLE CALL:
-//    let names = ["Juan Marcos", "Aleksandra Ivanov", "Zhang Wei", "Bernice King"];
-//    console.log("Q1 printNames:");
-//    printNames(names);
+   let names = ["Juan Marcos", "Aleksandra Ivanov", "Zhang Wei", "Bernice King"];
+   console.log(/"Q1 printNames:"/);
+   printNames(names);
 
-// EXAMPLE OUTPUT:
-//   Q1 printNames:
-//   Juan Marcos
-//   Aleksandra Ivanov
-//   Zhang Wei
-//   Bernice King
+function printNames(array) {
+    array.forEach(arr => console.log("\t",arr));
+}
 
-// PUT YOUR CODE HERE
+// if there was a value that needed to be returned i would have to put a return 
+// in the {}, but since it is a console.log, dont need one.
+// array.forEach((arr) => {
+//     console.log(arr)
+// })
 
 //---------- QUESTION 2 ----------
 // Create a variable called 'trees' and assign it an array of 3 objects.  Each object should have a 'type' property and a 'height' property.  You can use 'type' to describe the type of tree (ex. Dogwood, Maple, Oak, Elm, etc.) and give them any height.  Now write a function called 'logTreeType' that uses forEach to log the type of each tree object to the console.
 
 // EXAMPLE CALL:
-//   const trees = [
-//     { type: "oak", height: "30m" },
-//     { type: "elm", height: "25m" },
-//     { type: "birch", height: "18m" } ]
-//   console.log("Q2 logTreeType:");
-//   logTreeType(trees);
+  const trees = [
+    { type: "oak", height: "30m" },
+    { type: "elm", height: "25m" },
+    { type: "birch", height: "18m" } ]
+  console.log(/"Q2 logTreeType:"/);
+  logTreeType(trees);
 
-// EXAMPLE OUTPUT:
-//   Q2 logTreeType:
-//   oak
-//   elm
-//   birch
 
-// PUT YOUR CODE HERE
-
+function logTreeType(arrayOfObj) {
+    arrayOfObj.forEach(obj=>console.log("\t",obj.type))
+}
 //---------- QUESTION 3 ----------
 // Create a variable called 'myNumbers' and assign it an array of numbers.  Now write a function called 'totalPoints' that uses forEach to add up all the numbers in that array of numbers.
 
 // EXAMPLE CALL:
-//   let myNumbers = [1, 2, 7, 5, 8];
-//   console.log (\`Q3 totalPoints [${myNumbers}]:\`, totalPoints(myNumbers));
+  let myNumbers = [1, 3, 7, 5, 8];
+  console.log (/`Q3 totalPoints [${myNumbers}]:`/, "\n\t", totalPoints(myNumbers));
 
 // EXAMPLE OUTPUT:
 //   Q3 totalPoints [1,2,7,5,8]:  23
@@ -68,31 +65,37 @@
 // Try a few different input arrays to verify your code is working.
 
 // PUT YOUR CODE HERE
-
+function totalPoints(addingArray) {
+    let total=0;
+    addingArray.forEach((addArray) => {
+        total+=addArray
+    })
+    return total;
+}
 //---------- QUESTION 4 ----------
 // Create a variable called 'myWords' and assign it an array of words.  Then write a function called 'buildSentence' that takes in an array of words and uses forEach to add the strings together. It should also add a space, " ", after each word.
 
 // EXAMPLE CALL:
-//    let myWords = ["You","can","if","you","think","you","can","!"];
-//    console.log (\`Q4 buildSentence [${myWords}]: \`, buildSentence(myWords));
+   let myWords = ["You","can","if","you","think","you","can","!"];
+   console.log (/`Q4 buildSentence [${myWords}]:`/,"\n\t", buildSentence(myWords));
 
-// EXAMPLE OUTPUT:
-//   Q4 buildSentence [You,can,if,you,think,you,can,!]:  You can if you think you can !
-
-// Note: You should have a space after the ! too
-// Try a few different input arrays to verify your code is working.
-
-// PUT YOUR CODE HERE
-
+// i just coppied and pasted the last helper
+function buildSentence(addingArray) {
+    let total = "";
+    addingArray.forEach((addArray) => {
+       total +=`${addArray} `
+    })
+    return total;
+}
 //---------- QUESTION 5 ----------
 // Create a variable called 'decimals' and assign it an array of decimal numbers.  Write a function called 'logPercentages' that takes an array of decimal numbers and uses forEach to log each one with the numbers formatted as percentages. That means:
 //    Multiply by 100
 //    Include the percent symbol (%) at the end of the string
 
 // EXAMPLE CALL:
-//   let decimals = [0.75, 0.91, 0.2, 1.34];
-//   console.log("Q5 logPercentages:");
-//   logPercentages(decimals);
+  let decimals = [0.75, 0.91, 0.2, 1.34];
+  console.log(/"Q5 logPercentages:"/);
+  logPercentages(decimals);
 
 // EXAMPLE OUTPUT:
 // Q5 logPercentages:
@@ -102,7 +105,9 @@
 //   134%
 
 // PUT YOUR CODE HERE
-
+function logPercentages(num) {
+    num.forEach(n => console.log("\t", n * 100, "%"));
+}
 // ----- Practice JS Array Methods - map -----
 // ---------- QUESTION 6 ----------
 // Let's practice using the map array method.  Create a variable called 'startingNums' and assign it an array of numbers.  Then write a function called 'addThreeToAll' that uses map to add 3 to each number in an array of numbers.
