@@ -20,9 +20,7 @@
 
 // ----- Practice JS array methods: forEach -----
 //---------- QUESTION 1 ----------
-// Create an variable called 'names' and assign it an array of people's names.  Write a function called 'printNames' that uses the forEach array method to log each name in an array to the console.  Remember, since you're using the console.log in the function, you'll just want to call your function and pass it the array of names when testing your code.
 
-// EXAMPLE CALL:
    let names = ["Juan Marcos", "Aleksandra Ivanov", "Zhang Wei", "Bernice King"];
    console.log(/"Q1 printNames:"/);
    printNames(names);
@@ -38,14 +36,12 @@ function printNames(array) {
 // })
 
 //---------- QUESTION 2 ----------
-// Create a variable called 'trees' and assign it an array of 3 objects.  Each object should have a 'type' property and a 'height' property.  You can use 'type' to describe the type of tree (ex. Dogwood, Maple, Oak, Elm, etc.) and give them any height.  Now write a function called 'logTreeType' that uses forEach to log the type of each tree object to the console.
 
-// EXAMPLE CALL:
   const trees = [
     { type: "oak", height: "30m" },
     { type: "elm", height: "25m" },
     { type: "birch", height: "18m" } ]
-  console.log(/"Q2 logTreeType:"/);
+  console.log("Q2 logTreeType:");
   logTreeType(trees);
 
 
@@ -53,14 +49,9 @@ function logTreeType(arrayOfObj) {
     arrayOfObj.forEach(obj=>console.log("\t",obj.type))
 }
 //---------- QUESTION 3 ----------
-// Create a variable called 'myNumbers' and assign it an array of numbers.  Now write a function called 'totalPoints' that uses forEach to add up all the numbers in that array of numbers.
 
-// EXAMPLE CALL:
   let myNumbers = [1, 3, 7, 5, 8];
-  console.log (/`Q3 totalPoints [${myNumbers}]:`/, "\n\t", totalPoints(myNumbers));
-
-// EXAMPLE OUTPUT:
-//   Q3 totalPoints [1,2,7,5,8]:  23
+  console.log (`Q3 totalPoints [${myNumbers}]:`, "\n\t", totalPoints(myNumbers));
 
 // Try a few different input arrays to verify your code is working.
 
@@ -73,11 +64,9 @@ function totalPoints(addingArray) {
     return total;
 }
 //---------- QUESTION 4 ----------
-// Create a variable called 'myWords' and assign it an array of words.  Then write a function called 'buildSentence' that takes in an array of words and uses forEach to add the strings together. It should also add a space, " ", after each word.
 
-// EXAMPLE CALL:
    let myWords = ["You","can","if","you","think","you","can","!"];
-   console.log (/`Q4 buildSentence [${myWords}]:`/,"\n\t", buildSentence(myWords));
+   console.log (`Q4 buildSentence [${myWords}]:`,"\n\t", buildSentence(myWords));
 
 // i just coppied and pasted the last helper
 function buildSentence(addingArray) {
@@ -88,23 +77,11 @@ function buildSentence(addingArray) {
     return total;
 }
 //---------- QUESTION 5 ----------
-// Create a variable called 'decimals' and assign it an array of decimal numbers.  Write a function called 'logPercentages' that takes an array of decimal numbers and uses forEach to log each one with the numbers formatted as percentages. That means:
-//    Multiply by 100
-//    Include the percent symbol (%) at the end of the string
 
-// EXAMPLE CALL:
   let decimals = [0.75, 0.91, 0.2, 1.34];
-  console.log(/"Q5 logPercentages:"/);
+  console.log("Q5 logPercentages:");
   logPercentages(decimals);
 
-// EXAMPLE OUTPUT:
-// Q5 logPercentages:
-//   75%
-//   91%
-//   20%
-//   134%
-
-// PUT YOUR CODE HERE
 function logPercentages(num) {
     num.forEach(n => console.log("\t", n * 100, "%"));
 }
@@ -113,13 +90,13 @@ function logPercentages(num) {
 // Let's practice using the map array method.  Create a variable called 'startingNums' and assign it an array of numbers.  Then write a function called 'addThreeToAll' that uses map to add 3 to each number in an array of numbers.
 
 // EXAMPLE CALL:
-//   let startingNums = [4, 41, 832, 72, 89];
-//   console.log (\`Q6 addThreeToAll [${startingNums}]: \`, addThreeToAll(startingNums));
+  let startingNums = [107, 97, 7, -3, (7**3)+74, 417 ];
+  console.log (`Q6 addThreeToAll [${startingNums}]: `, addThreeToAll(startingNums));
 
-// EXAMPLE OUTPUT:
-//   Q6 addThreeToAll [4,41,832,72,89]:  [ 7, 44, 835, 75, 92 ]
-
-// PUT YOUR CODE HERE
+function addThreeToAll(arrayOfNumbers) {
+  let arrayOfTotals = arrayOfNumbers.map(numbers => numbers + 3);
+  return arrayOfTotals;
+}
 
 // ---------- QUESTION 7 ----------
 // Create a variable called 'baseNums' and assign it an array of numbers.  Write a function called 'squareAll' that takes in an array of numbers, and uses map to return an array containing the squares of each of the numbers.  Remember, you can square a number by multiplying it by itself, or by using the exponent operator like so:
@@ -129,19 +106,22 @@ function logPercentages(num) {
 // Note that the caret operator ^ does NOT mean exponent in JavaScript
 
 // EXAMPLE CALL:
-//   let baseNums = [4, 41, 832, 72, 89];
-//   console.log (\`Q7 squareAll [${baseNums}]:\`, squareAll(baseNums));
+  let baseNums = [4, 41, 832, 72, 89];
+  console.log (`Q7 squareAll [${baseNums}]:`, squareAll(baseNums));
 
 // EXAMPLE OUTPUT:
 //   Q7 squareAll [4,41,832,72,89]: [ 16, 1681, 692224, 5184, 7921 ]
 
 // PUT YOUR CODE HERE
-
+function squareAll(arrayOfNumbers) {
+  let arrayOfTotals = arrayOfNumbers.map(numbers => numbers*numbers);
+  return arrayOfTotals;
+}
 // ---------- QUESTION 8 ----------
 // Write a function called 'allGreetings' that takes an array of names (strings) by using your 'names' variable from question 1. Return an array of greetings (strings). The greetings should each be "Hello, [name], nice to meet you!".  You might find it helpful to use template strings.
 
 // EXAMPLE CALL: (using the names array from question 1)
-//   console.log (\`Q8 allGreetings [${names}]:\`, allGreetings(names));
+  console.log (`Q8 allGreetings [${names}]:`, allGreetings(names));
 
 // EXAMPLE OUTPUT:
 // Q8 allGreetings [Juan Marcos,Aleksandra Ivanov,Zhang Wei,Bernice King]: [
@@ -152,42 +132,48 @@ function logPercentages(num) {
 // ]
 
 // PUT YOUR CODE HERE
-
+function allGreetings(name) {
+  let namedGreeting = name.map(n => `Hello, ${n}, nice to meet you!`);
+  return namedGreeting;
+}
 // ---------- QUESTION 9 ----------
 // Create a variable called 'users' and assign it an array of objects.  See example on line 153 below.  Write a function called 'getUsernames' that takes in an array of user objects and uses map to return an array of just the usernames.
 
 // EXAMPLE CALL:
-//   let users = [
-//   {
-//     username: "juan.marcos",
-//     isAdmin: false,
-//   },
-//   {
-//     username: "aleksandra.ivanov",
-//     isAdmin: false,
-//   },
-//   {
-//     username: "zhang.wei",
-//     isAdmin: false,
-//   },
-//   {
-//     username: "bernice.king",
-//     isAdmin: true,
-//   }
-//   ];
-//
-//  console.log (\`Q9 getUsernames:\`, getUsernames(users));
+  let users = [
+  {
+    username: "juan.marcos",
+    isAdmin: false,
+  },
+  {
+    username: "aleksandra.ivanov",
+    isAdmin: false,
+  },
+  {
+    username: "zhang.wei",
+    isAdmin: false,
+  },
+  {
+    username: "bernice.king",
+    isAdmin: true,
+  }
+  ];
+
+ console.log (`Q9 getUsernames:`, getUsernames(users));
 
 // EXAMPLE OUTPUT:
 //   Q9 getUsernames: [ 'juan.marcos', 'aleksandra.ivanov', 'zhang.wei', 'bernice.king' ]
 
 // PUT YOUR CODE HERE
-
+function getUsernames(arrayOfObj) {
+  let name = arrayOfObj.map(obj => obj.username);
+  return name
+}
 // ---------- QUESTION 10 ----------
 // Write a function called 'pluck' that takes in an array of objects and a string representing a key as parameters, and uses the map method to return an array of the values at that key for each of the objects.  For example, if we used the users array from the last exercise, we could do pluck(users, 'username') to get the same results as the last question.  If any of the objects does not have a value at that key, the array should have undefined in that slot.  Hint: Using the square bracket notation, you can access a property of an object using a variable.
 
 // EXAMPLE CALL: (using the users array from Q9)
-//   console.log (\`Q10 pluck "isAdmin":\`, pluck(users, "isAdmin"));
+  console.log (`Q10 pluck "isAdmin":`, pluck(users, "isAdmin"));
 
 // EXAMPLE OUTPUT:
 //   Q10 pluck "isAdmin": [ false, false, false, true ]
@@ -195,6 +181,11 @@ function logPercentages(num) {
 // Try testing with username too!
 
 // PUT YOUR CODE HERE
+
+function pluck(user) {
+  let isAdmin = user.map(u => u["isAdmin"]);
+  return isAdmin
+}
 
 // ----- Practice JS methods - filter -----
 // ---------- QUESTION 11 ----------
