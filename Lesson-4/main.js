@@ -193,8 +193,8 @@ function pluck(user) {
 //  number % 2 === 0   (gives a true boolean result, for even numbers)
 
 // EXAMPLE CALL:
-//   let numberArray = [4, 41, 832, 72, 89, 120, 431, 505, 70];
-//   console.log (\`Q11 evenNumbers [${numberArray}]:\`, evenNumbers(numberArray));
+  let numberArray = [4, 41, 832, 72, 89, 120, 431, 505, 70];
+  console.log (`Q11 evenNumbers [${numberArray}]:`, evenNumbers(numberArray));
 
 // EXAMPLE OUTPUT:
 //   Q11 evenNumbers [4,41,832,72,89,120,431,505,70]: [ 4, 832, 72, 120, 70 ]
@@ -202,13 +202,16 @@ function pluck(user) {
 // If there are no even numbers in the array you make and use, return an empty array.
 
 // PUT YOUR CODE HERE
-
+function evenNumbers(arrayOfNumbers) {
+  const result = arrayOfNumbers.filter((num) => num % 2 === 0);
+  return result
+}
 // ---------- QUESTION 12 ----------
 // Write a function called 'greaterThan100' that takes in an array of numbers and uses the filter method.  Return any items in the array that are greater than 100.
 
 // EXAMPLE CALL:
-//   let numArray = [4,41,832,72,89,120,431,505,70];
-//   console.log (\`Q12 greaterThan100 [${numArray}]:\`, greaterThan100(numArray));
+  let numArray = [4,41,832,72,89,120,431,505,70];
+  console.log (`Q12 greaterThan100 [${numArray}]:`, greaterThan100(numArray));
 
 // EXAMPLE OUTPUT:
 //   Q12 greaterThan100 [4,41,832,72,89,120,431,505,70]: [ 832, 120, 431, 505 ]
@@ -216,12 +219,15 @@ function pluck(user) {
 // If there are no numbers greater than 100, return an empty array.
 
 // PUT YOUR CODE HERE
-
+function greaterThan100(nums) {
+  const result = nums.filter((num) => num > 100);
+  return result
+}
 // ---------- QUESTION 13 ----------
 // Write a function called 'nonAdminUsers' that takes in an array of user objects.  The objects should have a username and isAdmin property each like they do in Question 9.  The function should use the filter method to return the users who are not admins.
 
 // EXAMPLE CALL: (using users array from Q9)
-//   console.log (\`Q13 nonAdminUsers:\`, nonAdminUsers(users));
+  console.log (`Q13 nonAdminUsers:`, nonAdminUsers(users));
 
 // EXAMPLE OUTPUT:
 //   Q13 nonAdminUsers: [
@@ -231,11 +237,15 @@ function pluck(user) {
 //   ]
 
 // PUT YOUR CODE HERE
+function nonAdminUsers(array) {
+  const result = array.filter((obj) => obj.isAdmin === false);
+  return result
+}
 
 // ---------- QUESTION 14 ----------
 // Write a function called 'countAdminUsers' that uses filter and the length method on the result from filter.  The function should return the number of users that have 'isAdmin: true' as part of their object.
 // EXAMPLE CALL: (using users array from Q9)
-//   console.log (\`Q14 countAdminUsers:\`, countAdminUsers(users));
+  console.log (`Q14 countAdminUsers:`, countAdminUsers(users));
 
 // EXAMPLE OUTPUT:
 //   Q14 countAdminUsers: 1
@@ -243,29 +253,33 @@ function pluck(user) {
 // It should only count Bernice King since she is the only admin in that example.
 
 // PUT YOUR CODE HERE
+function countAdminUsers(array) {
+    const result = array.filter((obj) => obj.isAdmin===true);
+  return result.length
+}
 
 // ---------- QUESTION 15 ----------
 // Write a function called 'shorterThanX' that takes two arguments: an array of strings and an integer.  Use the filter method to return all the strings in the array whose length is shorter than the integer provided as an argument.  If there's no strings in the array that are shorter than the number, return an empty array.
 
 // EXAMPLE ARRAY:
-// let strings = [
-//   "Four score and seven years ago",
-//   "our forefathers brought forth on this continent a new nation",
-//   "conceived in liberty",
-//   "and dedicated to the proposition that all men are created equal",
-//   "Now we are engaged in a great civil war",
-//   "testing whether that nation",
-//   "or any so conceived and so dedicated",
-//   "can long endure.",
-// ];
+let strings = [
+  "Four score and seven years ago",
+  "our forefathers brought forth on this continent a new nation",
+  "conceived in liberty",
+  "and dedicated to the proposition that all men are created equal",
+  "Now we are engaged in a great civil war",
+  "testing whether that nation",
+  "or any so conceived and so dedicated",
+  "can long endure.",
+];
 
 // EXAMPLE CALL1:
-//   console.log (\`Q15 shorterThanX 20:\`, shorterThanX(strings, 20));
+  console.log (`Q15 shorterThanX 20:`, shorterThanX(strings, 20));
 // EXAMPLE OUTPUT1:
 //   Q15 shorterThanX 20: [ 'can long endure.' ]
 
 // EXAMPLE CALL2:
-//   console.log (\`Q15 shorterThanX 30:\`, shorterThanX(strings, 30));
+  console.log (`Q15 shorterThanX 30:`, shorterThanX(strings, 30));
 // EXAMPLE OUTPUT2:
 //   Q15 shorterThanX 30: [
 //    'conceived in liberty',
@@ -274,7 +288,10 @@ function pluck(user) {
 //  ]
 
 // PUT YOUR CODE HERE
-
+function shorterThanX(array,n) {
+    const result = array.filter((string) => string.length < n);
+  return result
+}
 // ---------- QUESTION 16 ----------
 // Write a function called 'onlyStrings' that takes an array that has different types of elements (numbers, booleans, strings, etc.) and uses the filter method to return an array of only the strings.
 
@@ -286,6 +303,10 @@ function pluck(user) {
 //   Q16 onlyStrings [4,4,four score,80,[object Object],nations,[object Object],states]: [ '4', 'four score', 'states' ]
 
 // PUT YOUR CODE HERE
+function shorterThanX(array) {
+    const result = array.filter((string) => typeof string);
+  return result
+}
 
 // ----- Practice JS methods - find -----
 // ---------- QUESTION 17 ----------

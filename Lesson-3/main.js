@@ -157,16 +157,17 @@ function dayFormatting(date) {
  * use previously made helper funtion
  */
 // PUT YOUR CODE HERE
-const startTime = dayFormatting("2025-10-13")
-const endTime = dayFormatting("2027-10-13")
-
+// const startTime = dayFormatting("2025-10-13")
+// const endTime = dayFormatting("2027-10-13")
+let startTime = new Date("2025-07-28T12:00:00")
+let endTime = new Date("2025-07-28T16:20:00")
 timeDifference(startTime, endTime)
 
 function timeDifference(start, end) {
     let difference = end.getTime() - start.getTime()
     console.log("1st ",difference)
     let hoursDiff = difference / 1000 / 60 / 60
-    console.log("2nd ", hoursDiff / 24)
+    console.log("2nd ", hoursDiff /24)
     return `Q7: ${hoursDiff} hours is 2 years in hours`
 
 }
