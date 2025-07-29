@@ -4,25 +4,11 @@
 // LESSON 4 ARRAY METHODS
 //----------------------------------
 
-//  This is the coding assigment for the fourth week of the Intro to Programming course from Code the Dream. The concepts touched on in this assignment include:
-
-//  - Using Array Methods
-//  - Understanding about iterative methods
-//  - Learning about callbacks
-//  - Creating Higher Order Functions
-//  - Using existing Array Higher Order Functions (e.g. forEach(), map(), filter(), etc.)
-
-// In this assignment you will write your own code. Your instructions are listed as "comments", meaning the instructions are grayed out and start with '//' at the beginning of the line of code. Put your answers immediately below the instructions for each question. You'll need to use console logs for all the questions to check your code output. Using a function in a console.log is very similar to how you were using them with variables last week. To invoke/call the function use the syntax:
-
-//  console.log("Q#: ", functionName(anyInput))
-
-// Please be sure to check the output of your called functions and console logs in the Console on this screen. Check to make sure that the output you get in your Console is the expected output.
-
 // ----- Practice JS array methods: forEach -----
 //---------- QUESTION 1 ----------
 
    let names = ["Juan Marcos", "Aleksandra Ivanov", "Zhang Wei", "Bernice King"];
-   console.log(/"Q1 printNames:"/);
+   console.log("Q1 printNames:");
    printNames(names);
 
 function printNames(array) {
@@ -87,9 +73,7 @@ function logPercentages(num) {
 }
 // ----- Practice JS Array Methods - map -----
 // ---------- QUESTION 6 ----------
-// Let's practice using the map array method.  Create a variable called 'startingNums' and assign it an array of numbers.  Then write a function called 'addThreeToAll' that uses map to add 3 to each number in an array of numbers.
 
-// EXAMPLE CALL:
   let startingNums = [107, 97, 7, -3, (7**3)+74, 417 ];
   console.log (`Q6 addThreeToAll [${startingNums}]: `, addThreeToAll(startingNums));
 
@@ -99,47 +83,25 @@ function addThreeToAll(arrayOfNumbers) {
 }
 
 // ---------- QUESTION 7 ----------
-// Create a variable called 'baseNums' and assign it an array of numbers.  Write a function called 'squareAll' that takes in an array of numbers, and uses map to return an array containing the squares of each of the numbers.  Remember, you can square a number by multiplying it by itself, or by using the exponent operator like so:
-// let number = 4
-// number \* number // 16
-// number \*\* 2 // 16
-// Note that the caret operator ^ does NOT mean exponent in JavaScript
 
-// EXAMPLE CALL:
   let baseNums = [4, 41, 832, 72, 89];
   console.log (`Q7 squareAll [${baseNums}]:`, squareAll(baseNums));
 
-// EXAMPLE OUTPUT:
-//   Q7 squareAll [4,41,832,72,89]: [ 16, 1681, 692224, 5184, 7921 ]
-
-// PUT YOUR CODE HERE
 function squareAll(arrayOfNumbers) {
   let arrayOfTotals = arrayOfNumbers.map(numbers => numbers*numbers);
   return arrayOfTotals;
 }
-// ---------- QUESTION 8 ----------
-// Write a function called 'allGreetings' that takes an array of names (strings) by using your 'names' variable from question 1. Return an array of greetings (strings). The greetings should each be "Hello, [name], nice to meet you!".  You might find it helpful to use template strings.
 
-// EXAMPLE CALL: (using the names array from question 1)
+// ---------- QUESTION 8 ----------
+
   console.log (`Q8 allGreetings [${names}]:`, allGreetings(names));
 
-// EXAMPLE OUTPUT:
-// Q8 allGreetings [Juan Marcos,Aleksandra Ivanov,Zhang Wei,Bernice King]: [
-//  'Hello, Juan Marcos, nice to meet you!',
-//  'Hello, Aleksandra Ivanov, nice to meet you!',
-//  'Hello, Zhang Wei, nice to meet you!',
-//  'Hello, Bernice King, nice to meet you!'
-// ]
-
-// PUT YOUR CODE HERE
 function allGreetings(name) {
   let namedGreeting = name.map(n => `Hello, ${n}, nice to meet you!`);
   return namedGreeting;
 }
 // ---------- QUESTION 9 ----------
-// Create a variable called 'users' and assign it an array of objects.  See example on line 153 below.  Write a function called 'getUsernames' that takes in an array of user objects and uses map to return an array of just the usernames.
 
-// EXAMPLE CALL:
   let users = [
   {
     username: "juan.marcos",
@@ -161,27 +123,14 @@ function allGreetings(name) {
 
  console.log (`Q9 getUsernames:`, getUsernames(users));
 
-// EXAMPLE OUTPUT:
-//   Q9 getUsernames: [ 'juan.marcos', 'aleksandra.ivanov', 'zhang.wei', 'bernice.king' ]
-
-// PUT YOUR CODE HERE
 function getUsernames(arrayOfObj) {
   let name = arrayOfObj.map(obj => obj.username);
   return name
 }
 // ---------- QUESTION 10 ----------
-// Write a function called 'pluck' that takes in an array of objects and a string representing a key as parameters, and uses the map method to return an array of the values at that key for each of the objects.  For example, if we used the users array from the last exercise, we could do pluck(users, 'username') to get the same results as the last question.  If any of the objects does not have a value at that key, the array should have undefined in that slot.  Hint: Using the square bracket notation, you can access a property of an object using a variable.
 
-// EXAMPLE CALL: (using the users array from Q9)
-  console.log (`Q10 pluck "isAdmin":`, pluck(users, "isAdmin"));
-
-// EXAMPLE OUTPUT:
-//   Q10 pluck "isAdmin": [ false, false, false, true ]
-
-// Try testing with username too!
-
-// PUT YOUR CODE HERE
-
+console.log(`Q10 pluck "isAdmin":`, pluck(users, "isAdmin"));
+  
 function pluck(user) {
   let isAdmin = user.map(u => u["isAdmin"]);
   return isAdmin
@@ -189,80 +138,44 @@ function pluck(user) {
 
 // ----- Practice JS methods - filter -----
 // ---------- QUESTION 11 ----------
-// Write a function called 'evenNumbers' that takes an array as an argument and uses the filter method.  Return only the even numbers from the array of numbers.  Remember - you can find out if a number is even by using the % operator (modulus operator) like this:
-//  number % 2 === 0   (gives a true boolean result, for even numbers)
-
-// EXAMPLE CALL:
+:
   let numberArray = [4, 41, 832, 72, 89, 120, 431, 505, 70];
   console.log (`Q11 evenNumbers [${numberArray}]:`, evenNumbers(numberArray));
 
-// EXAMPLE OUTPUT:
-//   Q11 evenNumbers [4,41,832,72,89,120,431,505,70]: [ 4, 832, 72, 120, 70 ]
-//
-// If there are no even numbers in the array you make and use, return an empty array.
-
-// PUT YOUR CODE HERE
 function evenNumbers(arrayOfNumbers) {
   const result = arrayOfNumbers.filter((num) => num % 2 === 0);
   return result
 }
 // ---------- QUESTION 12 ----------
-// Write a function called 'greaterThan100' that takes in an array of numbers and uses the filter method.  Return any items in the array that are greater than 100.
 
-// EXAMPLE CALL:
   let numArray = [4,41,832,72,89,120,431,505,70];
   console.log (`Q12 greaterThan100 [${numArray}]:`, greaterThan100(numArray));
 
-// EXAMPLE OUTPUT:
-//   Q12 greaterThan100 [4,41,832,72,89,120,431,505,70]: [ 832, 120, 431, 505 ]
-//
-// If there are no numbers greater than 100, return an empty array.
-
-// PUT YOUR CODE HERE
 function greaterThan100(nums) {
   const result = nums.filter((num) => num > 100);
   return result
 }
 // ---------- QUESTION 13 ----------
-// Write a function called 'nonAdminUsers' that takes in an array of user objects.  The objects should have a username and isAdmin property each like they do in Question 9.  The function should use the filter method to return the users who are not admins.
 
-// EXAMPLE CALL: (using users array from Q9)
   console.log (`Q13 nonAdminUsers:`, nonAdminUsers(users));
 
-// EXAMPLE OUTPUT:
-//   Q13 nonAdminUsers: [
-//     { username: 'juan.marcos', isAdmin: false },
-//     { username: 'aleksandra.ivanov', isAdmin: false },
-//     { username: 'zhang.wei', isAdmin: false }
-//   ]
-
-// PUT YOUR CODE HERE
 function nonAdminUsers(array) {
   const result = array.filter((obj) => obj.isAdmin === false);
   return result
 }
 
 // ---------- QUESTION 14 ----------
-// Write a function called 'countAdminUsers' that uses filter and the length method on the result from filter.  The function should return the number of users that have 'isAdmin: true' as part of their object.
-// EXAMPLE CALL: (using users array from Q9)
+
   console.log (`Q14 countAdminUsers:`, countAdminUsers(users));
 
-// EXAMPLE OUTPUT:
-//   Q14 countAdminUsers: 1
-
-// It should only count Bernice King since she is the only admin in that example.
-
-// PUT YOUR CODE HERE
 function countAdminUsers(array) {
     const result = array.filter((obj) => obj.isAdmin===true);
   return result.length
 }
 
 // ---------- QUESTION 15 ----------
-// Write a function called 'shorterThanX' that takes two arguments: an array of strings and an integer.  Use the filter method to return all the strings in the array whose length is shorter than the integer provided as an argument.  If there's no strings in the array that are shorter than the number, return an empty array.
 
-// EXAMPLE ARRAY:
-let strings = [
+let strings1 = [
   "Four score and seven years ago",
   "our forefathers brought forth on this continent a new nation",
   "conceived in liberty",
@@ -273,122 +186,82 @@ let strings = [
   "can long endure.",
 ];
 
-// EXAMPLE CALL1:
-  console.log (`Q15 shorterThanX 20:`, shorterThanX(strings, 20));
-// EXAMPLE OUTPUT1:
-//   Q15 shorterThanX 20: [ 'can long endure.' ]
+console.log (`Q15 shorterThanX 20:`, shorterThanX(strings1, 20));
 
-// EXAMPLE CALL2:
-  console.log (`Q15 shorterThanX 30:`, shorterThanX(strings, 30));
-// EXAMPLE OUTPUT2:
-//   Q15 shorterThanX 30: [
-//    'conceived in liberty',
-//    'testing whether that nation',
-//    'can long endure.'
-//  ]
+console.log (`Q15 shorterThanX 30:`, shorterThanX(strings1, 30));
 
-// PUT YOUR CODE HERE
-function shorterThanX(array,n) {
-    const result = array.filter((string) => string.length < n);
-  return result
+function shorterThanX(array1,n) {
+  return array1.filter(string2 => string2.length < n);
 }
 // ---------- QUESTION 16 ----------
-// Write a function called 'onlyStrings' that takes an array that has different types of elements (numbers, booleans, strings, etc.) and uses the filter method to return an array of only the strings.
 
-// EXAMPLE CALL:
-//   let manyTypes = [4, "4", "four score", 80, {age: 80}, ["nations"], {type: "free"}, "states"];
-//   console.log (\`Q16 onlyStrings [${manyTypes}]:\`, onlyStrings(manyTypes));
+  let manyTypes = [4, "4", "four score", 80, {age: 80}, ["nations"], {type: "free"}, "states"];
+  console.log (`Q16 onlyStrings [${manyTypes}]:`, onlyStrings(manyTypes));
 
-// EXAMPLE OUTPUT:
-//   Q16 onlyStrings [4,4,four score,80,[object Object],nations,[object Object],states]: [ '4', 'four score', 'states' ]
-
-// PUT YOUR CODE HERE
-function shorterThanX(array) {
-    const result = array.filter((string) => typeof string);
-  return result
+function onlyStrings(array) {
+    const result = array.filter((string) => typeof string==="string");
+    return result
 }
 
 // ----- Practice JS methods - find -----
 // ---------- QUESTION 17 ----------
-// Write a function called 'firstOdd' that takes an array of numbers as an argument.  The function should use the find method to find the first odd number in an array.  Remember - you can find out if a number is odd using the % operator like so:
-// number % 2 === 1  (gives a true boolean result, for odd numbers)
-// If there are no odd numbers, return undefined.
 
-// EXAMPLE CALL:
-//   let array = [4,41,832,72,89,120,431,505,70]
-//   console.log (\`Q17 firstOdd [${array}]:\`, firstOdd(array));
-
-// EXAMPLE OUTPUT:
-//   Q17 firstOdd [4,41,832,72,89,120,431,505,70]: 41
-
-// PUT YOUR CODE HERE
+  let array = [4,43141,832,72,89,120,431,505,70]
+console.log(`Q17 firstOdd [${array}]:`, firstOdd(array));
+  
+function firstOdd(array) {
+  let result = array.find(arr => arr % 2 !== 0);
+  return result
+}
 
 // ---------- QUESTION 18 ----------
-// Write a function called 'divisibleByTen' that takes an array of numbers as an argument.  The function should use the find method to return the first number that is a multiple of 10.  If there are no numbers divisible by 10, return undefined.
 
-// EXAMPLE CALL:
-//   let divArray = [4,41,832,72,89,120,431,505,70]
-//   console.log (\`Q18 divisibleByTen [${divArray}]:\`, divisibleByTen(divArray));
+  let divArray = [4,41,832,72,89,125,431,505,75]
+  console.log (`Q18 divisibleByTen [${divArray}]:`, divisibleByTen(divArray));
 
-// EXAMPLE OUTPUT:
-//   Q18 divisibleByTen [4,41,832,72,89,120,431,505,70]: 120
-
-// PUT YOUR CODE HERE
-
+// If there are no numbers divisible by 10, return undefined.<-find returns undefined when item is not found, already
+function divisibleByTen(array) {
+  return  array.find(arr => arr % 10  === 0);
+}
 // ---------- QUESTION 19 ----------
-// Write a function called 'divisibleByX' that takes two arguments: an array and an integer.  The function should use the find method to return the first number in the array that's divisible by the integer that was passed as an argument.  If there are no values that are divisible by the second argument, return undefined.
 
-// EXAMPLE ARRAY:
-//    let numbers = [4,41,832,72,89,120,431,70];
+   let numbers = [4,41,832,72,89,120,431,70];
 
-// EXAMPLE CALL 1:
-//    Qconsole.log (\`Q19 divisibleByX ([${divArray}], 10):\`, divisibleByX(numbers, 10));
-// EXAMPLE OUTPUT 1: (if using the example array above)
-//    Q19 divisibleByX ([4,41,832,72,89,120,431,505,70], 10): 120
+   console.log (`Q19 divisibleByX ([${divArray}], 10):`, divisibleByX(numbers, 10));
 
-// EXAMPLE CALL 2:
-//    console.log (\`Q190 divisibleByX ([${divArray}]. 3):\`, divisibleByX(numbers, 3));
-// EXAMPLE OUTPUT 2: (if using the example array above)
-//    Q19 divisibleByX ([4,41,832,72,89,120,431,505,70]. 3): 72
+   console.log (`Q19 divisibleByX ([${divArray}]. 3):`, divisibleByX(numbers, 3));
 
-// EXAMPLE CALL 3:
-//    console.log (\`Q19 divisibleByX ([${divArray}], 2):\`, divisibleByX(numbers, 2));
-// EXAMPLE OUTPUT 3: (if using the example array above)
-//    Q19 divisibleByX ([4,41,832,72,89,120,431,505,70], 2): 4
+   console.log (`Q19 divisibleByX ([${divArray}], 2):`, divisibleByX(numbers, 2));
 
-// PUT YOUR CODE HERE
+function divisibleByX(array, x) {
+  return  array.find(arr => arr % x === 0);
+}
 
 // ---------- QUESTION 20 ----------
-// Write a function called 'startsWithLetter' that takes two arguments: an array of strings and a letter.  The function should use the find method to return the first string in the array that starts with the letter provided as the argument.  If there's no string in the array that starts with that letter, return undefined. The function should leave lowercase and uppercase letters alone.
-// STRETCH GOAL: Throw an error "Letter must be a string of length 1" if the second argument is not a string, or if its length is more than 1.
-
-// EXAMPLE ARRAY:
-// let jokeStrings =
-//   ["Do you want to hear a joke?",
-//    "It's about a three-legged dog",
-//    "The dog walks into a bar",
-//    "The dog says, ",
-//    "\\"I'm looking for the man who shot my paw\\"",
-//    "Get it?"]
+// These were all fun and great confidence boosters. It really solidified my understanding with these methods. i cant wait to get to obj methods and classes.
+let jokeStrings =
+  ["Do you want to hear a joke?",
+   "It's about a three-legged dog",
+   "The dog walks into a bar",
+   "The dog says, ",
+   "I'm looking for the man who shot my paw",
+   "Get it?"]
 
 // EXAMPLE CALL 1:
-//    console.log (\`Q20 startsWithLetter T:\`, startsWithLetter(jokeStrings, "T"));
-// EXAMPLE OUTPUT 1: (if using the example array above)
-//    Q20 startsWithLetter T: The dog walks into a bar
+   console.log (`Q20 startsWithLetter T:`, startsWithLetter(jokeStrings, "T"));
 
-// EXAMPLE CALL 2:
-//    console.log (\`Q20 startsWithLetter I:\`, startsWithLetter(jokeStrings, "I"));
-// EXAMPLE OUTPUT 2: (if using the example array above)
-//    Q20 startsWithLetter I: It's about a three-legged dog
+   console.log (`Q20 startsWithLetter I:`, startsWithLetter(jokeStrings, "I"));
 
-// EXAMPLE CALL 3:
-//    console.log (\`Q20 startsWithLetter i:\`, startsWithLetter(jokeStrings, "i"));
-// EXAMPLE OUTPUT 3: (if using the example array above)
-//    Q20 startsWithLetter i: undefined
+   console.log (`Q20 startsWithLetter i:`, startsWithLetter(jokeStrings, "i"));
 
-// STRETCH GOAL EXAMPLE CALL:
-//    console.log (\`Q20 startsWithLetter dog:\`, startsWithLetter(jokeStrings, "dog"));
-// STRETCH GOAL EXAMPLE OUTPUT:
-//    Q20 startsWithLetter dog: Error: Letter must be a string of length 1
+   console.log (`Q20 startsWithLetter dog:`, startsWithLetter(jokeStrings, "dog"));
 
-// PUT YOUR CODE HERE
+// function startsWithLetter(array, x) {
+//   return  array.find(arr => arr[0]===x );
+// }
+function startsWithLetter(array, x) {
+      if (x.length > 1) {
+      return "Error: Letter must be a string of length 1"
+    }
+  return array.find((arr) => arr[0] === x);
+}
