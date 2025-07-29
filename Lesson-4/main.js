@@ -138,7 +138,7 @@ function pluck(user) {
 
 // ----- Practice JS methods - filter -----
 // ---------- QUESTION 11 ----------
-:
+
   let numberArray = [4, 41, 832, 72, 89, 120, 431, 505, 70];
   console.log (`Q11 evenNumbers [${numberArray}]:`, evenNumbers(numberArray));
 
