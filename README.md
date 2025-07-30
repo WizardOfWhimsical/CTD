@@ -8,6 +8,8 @@ And if you're staff — like Noah or my mentors — welcome in. You're always in
 
 ## 🔍 Features
 
+-adding to check push
+
 - 📦 Mobile access to my JavaScript, HTML, and CSS coursework
 - 🔄 Ability to reflect, revise, and build on the go
 - 🤝 Shared space for mentors and teachers to observe, guide, or check in
