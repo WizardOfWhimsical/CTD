@@ -8,7 +8,7 @@ And if you're staff — like Noah or my mentors — welcome in. You're always in
 
 ## 🔍 Features
 
--adding to check push
+-adding t-add to o check push
 
 - 📦 Mobile access to my JavaScript, HTML, and CSS coursework
 - 🔄 Ability to reflect, revise, and build on the go
