@@ -29,4 +29,6 @@ return newStr.join(" ")
  * hold += str+" \u{1F563} "
  * }
  * return hold
+ * 
+ *  building a conditional in a for.of loop might have been easier but probably not
  */
